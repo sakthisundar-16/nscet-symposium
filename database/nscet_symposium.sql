@@ -100,8 +100,8 @@ CREATE TABLE `payments` (
 
 -- Default Data for admin
 INSERT INTO `admins` (`username`, `password`, `email`, `role`) VALUES
-('admin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin@nscet.org', 'super_admin'); 
--- password is 'password'
+('admin', '$2y$10$e2p2lsLQyxNBs1lNVamNuuCLYCUnyXg.3JQ8D1O.D.I5nddbNgMBu', 'admin@nscet.org', 'super_admin'); 
+-- password is 'admin123'
 
 -- Default events
 INSERT INTO `events` (`name`, `phase`, `description`, `type`, `max_participants_per_college`) VALUES
