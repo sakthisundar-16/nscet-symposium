@@ -88,12 +88,8 @@ const Footer = () => {
           {/* Divider */}
           <div className="h-px bg-gradient-to-r from-transparent via-[#C8845A]/40 to-transparent mb-6" />
 
-          <div className="flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-[#4A6080] font-inter">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-3 text-xs text-[#4A6080] font-inter">
             <p>&copy; {year} SYNTAX 2K26 · NSCET Faculty of Computing. All rights reserved.</p>
-            <div className="flex items-center gap-1.5 hover:text-[#A0623E] transition-colors cursor-default">
-              <ExternalLink size={11} />
-              <span>Production-ready · cPanel Compatible</span>
-            </div>
           </div>
         </div>
       </div>
