@@ -1,0 +1,26 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="eventLogoTitle">
+  <title id="eventLogoTitle">SYNTAX 2K26 Event Logo</title>
+  <defs>
+    <linearGradient id="eventGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="60%" stop-color="#0ea5e9" />
+      <stop offset="100%" stop-color="#6366F1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Outer ring -->
+  <circle cx="150" cy="150" r="140" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="5" />
+  <!-- Inner gradient fill -->
+  <circle cx="150" cy="150" r="112" fill="url(#eventGradient)" opacity="0.97" />
+  <!-- Subtle inner highlight ring -->
+  <circle cx="150" cy="150" r="112" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="3" />
+  <!-- Text -->
+  <text x="150" y="122" font-family="Poppins, sans-serif" font-size="50" font-weight="800" text-anchor="middle" fill="#FFFFFF" filter="url(#glow)">SYNTAX</text>
+  <text x="150" y="182" font-family="Inter, sans-serif" font-size="40" font-weight="800" text-anchor="middle" fill="#FFFFFF" filter="url(#glow)">2K26</text>
+</svg>
