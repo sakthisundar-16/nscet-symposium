@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { CheckCircle, Target, Cpu, Users, BookOpen } from 'lucide-react';
+import { CheckCircle, Target, Cpu, Users, BookOpen, ShieldCheck } from 'lucide-react';
 
 const values = [
   { icon: BookOpen, label:'Academic Excellence',  desc:'Rigorous curriculum blended with real-world problem solving and research.' },
@@ -182,6 +182,94 @@ const About = () => (
                 ))}
               </ul>
             </div>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* ── Rules & Regulations ── */}
+      <motion.div
+        initial={{ opacity:0, y:32 }} whileInView={{ opacity:1, y:0 }}
+        viewport={{ once:true, margin:'-60px' }} transition={{ duration:0.7 }}
+        className="relative mt-8"
+      >
+        {/* Outer glow ring */}
+        <div className="absolute -inset-[2px] rounded-3xl bg-gradient-to-br from-[#1B3A6B] via-[#C8845A] to-[#1B3A6B] opacity-40 blur-sm pointer-events-none"/>
+        {/* Pulsing glow behind card */}
+        <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-[#1B3A6B]/15 via-[#C8845A]/12 to-[#1B3A6B]/15 blur-xl pointer-events-none animate-pulse"/>
+
+        {/* Card */}
+        <div className="relative rounded-3xl overflow-hidden border border-[#C8845A]/35 shadow-[0_0_60px_rgba(27,58,107,0.18),0_0_30px_rgba(200,132,90,0.14)]">
+          {/* Background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0F2444] via-[#1B3A6B] to-[#0F2444]"/>
+          {/* Shimmer overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.03] to-transparent"/>
+          {/* Corner accent orbs */}
+          <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-[#C8845A]/12 blur-3xl pointer-events-none"/>
+          <div className="absolute bottom-0 left-0 w-56 h-56 rounded-full bg-[#C8845A]/08 blur-3xl pointer-events-none"/>
+          {/* Top gold border line */}
+          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#C8845A] to-transparent"/>
+
+          <div className="relative z-10 px-8 md:px-14 py-12 md:py-14">
+
+            {/* Header */}
+            <div className="flex items-center gap-4 mb-10">
+              <div className="relative shrink-0">
+                <div className="absolute inset-0 rounded-2xl bg-[#C8845A]/30 blur-md"/>
+                <div className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-[#C8845A] to-[#A0623E] flex items-center justify-center shadow-lg shadow-[#C8845A]/40">
+                  <ShieldCheck size={26} className="text-white"/>
+                </div>
+              </div>
+              <div>
+                <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.22em] text-[#C8845A] mb-1 font-inter">For All Participants</span>
+                <h2 className="text-2xl md:text-3xl font-black font-orbitron text-white">General Rules &amp; Regulations</h2>
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="h-px bg-gradient-to-r from-transparent via-[#C8845A]/50 to-transparent mb-10"/>
+
+            {/* Rules Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {[
+                'The symposium is open to students from all recognized colleges and universities.',
+                'Participants must maintain proper discipline and decorum throughout the event.',
+                'Every participant must wear their College Identity Card during the symposium.',
+                'The decision of the Judges and Organizing Committee shall be final and binding.',
+                'Any act of malpractice, misconduct, plagiarism, or violation of rules will result in immediate disqualification.',
+                'Participants are responsible for their personal belongings.',
+                'Event schedules must be strictly followed. Late entries may not be entertained.',
+                'Mobile phones, smart watches, and electronic gadgets are prohibited during technical events unless specifically permitted.',
+                'Certificates will be issued only to registered participants.',
+                'Winners and Runners-up will receive Certificates and Prizes.',
+                'The Organizing Committee reserves the right to modify event schedules or rules if necessary.',
+              ].map((rule, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity:0, x:-14 }}
+                  whileInView={{ opacity:1, x:0 }}
+                  viewport={{ once:true }}
+                  transition={{ delay: i * 0.055, duration: 0.4 }}
+                  className="flex items-start gap-4 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] hover:border-[#C8845A]/35 rounded-2xl p-4 transition-all duration-300 group cursor-default"
+                >
+                  {/* Number badge */}
+                  <div className="shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-[#C8845A] to-[#A0623E] flex items-center justify-center shadow-md shadow-[#C8845A]/30 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-[11px] font-black text-white font-inter">{i + 1}</span>
+                  </div>
+                  <p className="text-[13.5px] leading-relaxed text-white/80 font-inter group-hover:text-white/95 transition-colors duration-300 pt-0.5">
+                    {rule}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Bottom note */}
+            <div className="mt-10 flex items-center gap-3 border-t border-white/[0.08] pt-7">
+              <div className="w-1.5 h-1.5 rounded-full bg-[#C8845A] shadow-[0_0_8px_rgba(200,132,90,0.8)] animate-pulse shrink-0"/>
+              <p className="text-xs text-white/50 font-inter italic">
+                These rules are subject to change at the discretion of the Organizing Committee. Participants are advised to check for updates before the event.
+              </p>
+            </div>
+
           </div>
         </div>
       </motion.div>
