@@ -30,9 +30,67 @@ const About = () => (
           className="divider-glow w-24 mx-auto mb-6"/>
         <motion.p initial={{opacity:0,y:16}} animate={{opacity:1,y:0}} transition={{delay:0.25}}
           className="text-lg md:text-xl text-[#4A6080] max-w-3xl mx-auto leading-relaxed font-inter">
-          The ultimate convergence of technology, innovation, and creativity — a platform for the brightest minds to showcase their skills and push the boundaries of what's possible.
+          The flagship National Level Technical Symposium by the Faculty of Computing at NSCET, Theni — where technology meets creativity and competition.
         </motion.p>
       </div>
+
+      {/* ── SYNTAX 2K26 Description ── */}
+      <motion.div
+        initial={{opacity:0,y:28}} animate={{opacity:1,y:0}} transition={{delay:0.3,duration:0.7}}
+        className="relative rounded-3xl overflow-hidden mb-16"
+      >
+        {/* Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1B3A6B]/06 via-white/90 to-[#C8845A]/06"/>
+        <div className="absolute inset-0 bg-white/60 backdrop-blur-2xl"/>
+        <div className="absolute inset-0 border border-[#C8845A]/22 rounded-3xl"/>
+        {/* Decorative orbs */}
+        <div className="absolute -top-10 -left-10 w-52 h-52 rounded-full bg-[#1B3A6B]/08 blur-3xl pointer-events-none"/>
+        <div className="absolute -bottom-10 -right-10 w-52 h-52 rounded-full bg-[#C8845A]/10 blur-3xl pointer-events-none"/>
+
+        <div className="relative z-10 px-8 md:px-14 py-12 md:py-14">
+          {/* Gold accent bar */}
+          <div className="flex items-center gap-4 mb-8">
+            <div className="w-1 h-12 rounded-full bg-gradient-to-b from-[#1B3A6B] to-[#C8845A]"/>
+            <div>
+              <span className="section-label inline-flex mb-1">National Level Technical Symposium</span>
+              <h2 className="text-2xl md:text-3xl font-black font-orbitron" style={{color:'#0F2444'}}>
+                About <span className="text-gradient-primary">SYNTAX 2K26</span>
+              </h2>
+            </div>
+          </div>
+
+          <div className="space-y-5 max-w-4xl">
+            <p className="text-[15px] md:text-base leading-[1.85] text-[#2D4A6A] font-inter">
+              <span className="font-bold text-[#0F2444]">SYNTAX 2K26</span> is the flagship National Level Technical Symposium organized by the{' '}
+              <span className="font-semibold text-[#A0623E]">Faculty of Computing (CSE, IT &amp; AIDS Department)</span> at{' '}
+              <span className="font-semibold text-[#1B3A6B]">Nadar Saraswathi College of Engineering and Technology, Theni.</span>
+            </p>
+
+            <p className="text-[15px] md:text-base leading-[1.85] text-[#2D4A6A] font-inter">
+              The symposium serves as a platform for students to demonstrate their technical knowledge, creativity, analytical thinking, communication skills, teamwork, and innovative ideas through a series of challenging <span className="font-semibold text-[#1B3A6B]">technical and non-technical competitions.</span>
+            </p>
+
+            <p className="text-[15px] md:text-base leading-[1.85] text-[#2D4A6A] font-inter">
+              SYNTAX 2K26 aims to <span className="font-semibold text-[#A0623E]">bridge the gap between academic learning and industry expectations</span> by encouraging students to explore emerging technologies, develop practical skills, and collaborate with peers from various institutions.
+            </p>
+          </div>
+
+          {/* Quick-stat badges */}
+          <div className="flex flex-wrap gap-3 mt-9">
+            {[
+              { label:'Organized by', value:'Faculty of Computing' },
+              { label:'Department',   value:'CSE · IT · AIDS' },
+              { label:'Level',        value:'National Level' },
+              { label:'Date',         value:'August 7, 2026' },
+            ].map(({label,value})=>(
+              <div key={label} className="bg-white/80 border border-[#C8845A]/22 rounded-2xl px-5 py-3 shadow-sm">
+                <p className="text-[10px] text-[#4A6080] uppercase tracking-[0.18em] font-inter font-semibold mb-0.5">{label}</p>
+                <p className="text-sm font-bold font-inter" style={{color:'#0F2444'}}>{value}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </motion.div>
 
       {/* College + Department cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
