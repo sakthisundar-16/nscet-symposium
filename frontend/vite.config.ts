@@ -10,10 +10,11 @@ export default defineConfig({
   ],
 
   // ── Production Build (cPanel deployment) ───────────────────────────────
-  // Outputs built React app into the PHP project root alongside PHP files.
-  // Run: npm run build   →   upload the entire cseworkshop/ folder to public_html
+  // Site lives at: yourdomain.com/syntax2k26/
+  // Run: npm run build  →  then run deploy.ps1  →  upload syntax2k26_cpanel.zip to cPanel
   build: {
-    outDir: '../',          // Output to cseworkshop/ (one level up from frontend/)
+    base: '/syntax2k26/',   // ← subfolder name on cPanel (yourdomain.com/syntax2k26)
+    outDir: '../',          // Output to cseworkshop/ root alongside PHP files
     emptyOutDir: false,     // CRITICAL: never wipe PHP files in the root
     assetsDir: 'reactapp',  // Avoid conflict with existing /assets/ PHP folder
     rollupOptions: {

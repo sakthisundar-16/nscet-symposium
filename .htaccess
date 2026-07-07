@@ -1,6 +1,6 @@
 RewriteEngine On
 
-# ── Security ────────────────────────────────────────────────────────────────
+# ── Security ─────────────────────────────────────────────────────────────────
 Options -Indexes
 
 <FilesMatch "^\.">
@@ -11,14 +11,9 @@ Options -Indexes
     Require all denied
 </FilesMatch>
 
-# ── HTTPS Redirect (uncomment in production) ────────────────────────────────
+# ── HTTPS Redirect (uncomment in production) ──────────────────────────────────
 # RewriteCond %{HTTPS} off
 # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# ── Error Pages ─────────────────────────────────────────────────────────────
-ErrorDocument 404 /404.php
-ErrorDocument 403 /403.php
-ErrorDocument 500 /500.php
 
 # ── PHP Settings ─────────────────────────────────────────────────────────────
 php_flag display_errors Off
@@ -26,15 +21,14 @@ php_value upload_max_filesize 12M
 php_value post_max_size 15M
 php_value max_execution_time 300
 
-# ── React SPA Routing ───────────────────────────────────────────────────────
-# Pass PHP/API/asset requests directly (do NOT rewrite them)
-RewriteCond %{REQUEST_URI} ^/api/           [OR]
-RewriteCond %{REQUEST_URI} ^/includes/      [OR]
-RewriteCond %{REQUEST_URI} ^/assets/        [OR]
-RewriteCond %{REQUEST_URI} ^/reactapp/      [OR]
-RewriteCond %{REQUEST_URI} ^/uploads/       [OR]
-RewriteCond %{REQUEST_URI} ^/admin/         [OR]
-RewriteCond %{REQUEST_URI} ^/coordinator/
+# ── React SPA Routing (works in subfolder /syntax2k26/) ──────────────────────
+# Pass PHP/API/asset requests directly
+RewriteCond %{REQUEST_URI} ^/syntax2k26/api/           [OR]
+RewriteCond %{REQUEST_URI} ^/syntax2k26/includes/      [OR]
+RewriteCond %{REQUEST_URI} ^/syntax2k26/assets/        [OR]
+RewriteCond %{REQUEST_URI} ^/syntax2k26/reactapp/      [OR]
+RewriteCond %{REQUEST_URI} ^/syntax2k26/uploads/       [OR]
+RewriteCond %{REQUEST_URI} ^/syntax2k26/database/
 RewriteRule ^ - [L]
 
 # If request is for a real file or directory, serve it directly
@@ -42,7 +36,7 @@ RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# All other requests → React index.html (SPA client-side routing)
+# All other requests → React index.html (client-side routing)
 RewriteRule ^ index.html [L]
 
 # ── Browser Caching ──────────────────────────────────────────────────────────
@@ -57,7 +51,6 @@ RewriteRule ^ index.html [L]
     ExpiresByType text/css            "access 1 month"
     ExpiresByType text/javascript     "access 1 month"
     ExpiresByType application/javascript "access 1 month"
-    ExpiresByType application/pdf     "access 1 month"
     ExpiresByType image/x-icon        "access 1 year"
     ExpiresDefault                    "access 1 month"
 </IfModule>
@@ -72,7 +65,6 @@ RewriteRule ^ index.html [L]
     Header always set X-Content-Type-Options "nosniff"
     Header always set X-Frame-Options "SAMEORIGIN"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
-    # Cache-bust for hashed React assets
     <FilesMatch "\.(js|css)$">
         Header set Cache-Control "public, max-age=31536000, immutable"
     </FilesMatch>
