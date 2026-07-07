@@ -77,7 +77,7 @@ const features = [
 
 const Home = () => {
   const calculateTimeLeft = () => {
-    const diff = new Date('2026-07-31T09:30:00').getTime() - Date.now();
+    const diff = new Date('2026-08-07T09:30:00').getTime() - Date.now();
     if (diff <= 0) return { days: '00', hours: '00', minutes: '00', seconds: '00' };
     return {
       days:    String(Math.floor(diff / 86400000)).padStart(2, '0'),
@@ -142,7 +142,7 @@ const Home = () => {
                 className="flex items-center gap-3 mb-6"
               >
                 <div className="divider-glow w-10 h-px" />
-                <span className="text-sky-500 text-sm tracking-[0.22em] uppercase font-bold font-inter">July 31, 2026</span>
+                <span className="text-sky-500 text-sm tracking-[0.22em] uppercase font-bold font-inter">August 7, 2026</span>
                 <div className="divider-glow w-10 h-px" />
               </motion.div>
 
@@ -171,7 +171,7 @@ const Home = () => {
                 className="flex flex-wrap gap-2.5"
               >
                 {[
-                  { icon: Calendar, text: 'July 31, 2026' },
+                  { icon: Calendar, text: 'August 7, 2026' },
                   { icon: MapPin,   text: 'NSCET, Theni' },
                   { icon: Users,    text: 'Individual Only' },
                 ].map(({ icon: Icon, text }) => (
@@ -210,7 +210,7 @@ const Home = () => {
 
                 <div className="grid grid-cols-2 gap-3">
                   {[
-                    { icon: Calendar, label: 'Date',  val: 'July 31, 2026' },
+                    { icon: Calendar, label: 'Date',  val: 'August 7, 2026' },
                     { icon: MapPin,   label: 'Venue', val: 'NSCET, Theni' },
                   ].map(({ icon: Icon, label, val }) => (
                     <div key={label} className="bg-white/70 border border-blue-100 rounded-xl p-3 flex items-center gap-3">

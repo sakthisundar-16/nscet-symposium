@@ -50,7 +50,7 @@ const Footer = () => {
               </p>
               <div className="flex items-center gap-2 mb-5">
                 <span className="w-2 h-2 rounded-full bg-green-400 shadow-[0_0_8px_rgba(34,197,94,0.6)] animate-pulse" />
-                <span className="text-xs text-slate-500 font-inter font-semibold">Registration Open · July 31, 2026</span>
+                <span className="text-xs text-slate-500 font-inter font-semibold">Registration Open · August 7, 2026</span>
               </div>
               <Link
                 to="/register"

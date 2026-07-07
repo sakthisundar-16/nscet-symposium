@@ -163,7 +163,7 @@ const Registration = () => {
             Register for <span className="text-gradient-primary">SYNTAX 2K26</span>
           </motion.h1>
           <motion.p initial={{ opacity:0 }} animate={{ opacity:1 }} transition={{ delay:0.16 }} className="text-slate-400 font-inter mb-4">
-            National Level Technical Symposium — July 31, 2026
+            National Level Technical Symposium — August 7, 2026
           </motion.p>
           <motion.div
             initial={{ opacity:0,y:8 }} animate={{ opacity:1,y:0 }} transition={{ delay:0.22 }}

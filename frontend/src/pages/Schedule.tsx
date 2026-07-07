@@ -63,7 +63,7 @@ const Schedule = () => (
       {/* Header */}
       <div className="text-center mb-20">
         <motion.span initial={{ opacity:0,y:10 }} animate={{ opacity:1,y:0 }} className="section-label inline-flex mb-5">
-          <Clock size={12} /> July 31, 2026
+          <Clock size={12} /> August 7, 2026
         </motion.span>
         <motion.h1
           initial={{ opacity:0,y:24 }} animate={{ opacity:1,y:0 }} transition={{ delay:0.1 }}
