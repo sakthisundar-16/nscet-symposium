@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Clock, MapPin, Code, Bot, Layout, FileText, BrainCircuit, Database,
@@ -227,14 +228,14 @@ const EventModal = ({ event, onClose }: { event: EventItem; onClose: () => void 
   const tag  = tagConfig[event.tag] || tagConfig.Technical;
   const det  = eventDetails[event.id];
 
-  return (
+  const modal = (
     <motion.div
       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6"
+      style={{ position:'fixed', inset:0, zIndex:9999, display:'flex', alignItems:'center', justifyContent:'center', padding:'1rem' }}
       onClick={onClose}
     >
       {/* Backdrop */}
-      <div className="absolute inset-0 bg-[#0F2444]/70 backdrop-blur-md" />
+      <div style={{ position:'absolute', inset:0, background:'rgba(15,36,68,0.75)', backdropFilter:'blur(8px)' }} />
 
       {/* Panel */}
       <motion.div
@@ -242,7 +243,7 @@ const EventModal = ({ event, onClose }: { event: EventItem; onClose: () => void 
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.92, y: 28 }}
         transition={{ type: 'spring', stiffness: 340, damping: 32 }}
-        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl shadow-2xl"
+        style={{ position:'relative', width:'100%', maxWidth:'680px', maxHeight:'88vh', overflowY:'auto', borderRadius:'1.5rem', boxShadow:'0 25px 80px rgba(0,0,0,0.5)' }}
         onClick={e => e.stopPropagation()}
       >
         {/* Background */}
@@ -395,6 +396,8 @@ const EventModal = ({ event, onClose }: { event: EventItem; onClose: () => void 
       </motion.div>
     </motion.div>
   );
+
+  return createPortal(modal, document.body);
 };
 
 /* Small helper for section headings inside the modal */
