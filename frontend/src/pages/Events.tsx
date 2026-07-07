@@ -243,19 +243,19 @@ const EventModal = ({ event, onClose }: { event: EventItem; onClose: () => void 
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.92, y: 28 }}
         transition={{ type: 'spring', stiffness: 340, damping: 32 }}
-        style={{ position:'relative', width:'100%', maxWidth:'680px', maxHeight:'88vh', overflowY:'auto', borderRadius:'1.5rem', boxShadow:'0 25px 80px rgba(0,0,0,0.5)' }}
+        style={{ position:'relative', width:'100%', maxWidth:'680px', maxHeight:'88vh', display:'flex', flexDirection:'column', overflow:'hidden', borderRadius:'1.5rem', boxShadow:'0 25px 80px rgba(0,0,0,0.5)' }}
         onClick={e => e.stopPropagation()}
       >
         {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0F2444] via-[#1B3A6B] to-[#0F2444] rounded-3xl" />
-        <div className="absolute inset-0 rounded-3xl border border-[#C8845A]/30" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0F2444] via-[#1B3A6B] to-[#0F2444] pointer-events-none" />
+        <div className="absolute inset-0 rounded-3xl border border-[#C8845A]/30 pointer-events-none" />
         {/* Gold accent orbs */}
         <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-[#C8845A]/10 blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full bg-[#C8845A]/08 blur-3xl pointer-events-none" />
         {/* Top gold line */}
-        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#C8845A] to-transparent rounded-t-3xl" />
+        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#C8845A] to-transparent pointer-events-none" />
 
-        <div className="relative z-10 p-7 md:p-10">
+        <div className="relative z-10 p-7 md:p-10 overflow-y-auto flex-1 w-full custom-scrollbar" style={{ maxHeight: '88vh' }}>
 
           {/* Close button */}
           <button

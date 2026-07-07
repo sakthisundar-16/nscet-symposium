@@ -426,3 +426,19 @@
 
 /* ── Selection ───────────────────────────────────────────────────────── */
 ::selection { background: rgba(200,132,90,0.20); color: #0F2444; }
+
+/* Modal Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(200, 132, 90, 0.25);
+  border-radius: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(200, 132, 90, 0.4);
+}
