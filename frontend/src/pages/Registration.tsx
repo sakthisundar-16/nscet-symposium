@@ -9,6 +9,7 @@ import {
   Building2, GraduationCap, MessageCircle,
 } from 'lucide-react';
 import axios from 'axios';
+import QRCode from 'react-qr-code';
 
 const schema = z.object({
   full_name:     z.string().min(3, 'Name is required'),
@@ -280,13 +281,19 @@ const Registration = () => {
                   <div className="shrink-0 mx-auto md:mx-0">
                     <div className="relative bg-white rounded-3xl p-5 shadow-[0_0_40px_rgba(200,132,90,0.22)] border-2 border-[#C8845A]/35">
                       <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#F5EDE5]/60 to-[#EEF2F8]/60 opacity-70"/>
-                      <div className="relative w-44 h-44 bg-white rounded-2xl flex items-center justify-center border border-[#C8845A]/20 shadow-inner">
-                        <QrCode size={82} className="text-[#1B3A6B]/40"/>
+                      <div className="relative w-44 h-44 bg-white rounded-2xl flex items-center justify-center border border-[#C8845A]/20 shadow-inner p-3">
+                        <QRCode
+                          value="upi://pay?pa=nadarsaraswathicollege@tmb&pn=Nadar%20Saraswathi%20College"
+                          size={150}
+                          style={{ height: "auto", maxWidth: "100%", width: "100%" }}
+                          viewBox={`0 0 256 256`}
+                        />
                       </div>
                     </div>
                     <div className="text-center mt-4">
-                      <p className="text-3xl font-black text-gradient-primary font-orbitron">₹350</p>
-                      <p className="text-xs text-[#4A6080] font-inter mt-1">Scan to pay via UPI</p>
+                      <p className="text-3xl font-black text-gradient-primary font-orbitron mb-1">₹350</p>
+                      <p className="text-xs font-bold text-[#1B3A6B] font-inter">nadarsaraswathicollege@tmb</p>
+                      <p className="text-[10px] text-[#4A6080] font-inter mt-0.5">Scan to pay via any UPI app</p>
                     </div>
                   </div>
 
