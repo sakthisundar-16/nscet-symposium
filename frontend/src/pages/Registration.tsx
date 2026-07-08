@@ -49,6 +49,7 @@ const Registration = () => {
   const [paymentFile, setPaymentFile]       = useState<File|null>(null);
   const [transactionId, setTransactionId]   = useState('');
   const [isSubmitting, setIsSubmitting]     = useState(false);
+  const [submitError, setSubmitError]       = useState('');
   const [successData, setSuccessData]       = useState<any>(null);
 
   const {register, formState:{errors}, trigger, getValues} = useForm({resolver:zodResolver(schema)});
@@ -63,7 +64,8 @@ const Registration = () => {
   const prevStep = () => setStep(s=>s-1);
 
   const onSubmit = async () => {
-    if (!paymentFile||!transactionId) {alert('Please upload payment screenshot and enter Transaction ID.');return;}
+    setSubmitError('');
+    if (!paymentFile||!transactionId) {setSubmitError('Please upload payment screenshot and enter Transaction ID.');return;}
     setIsSubmitting(true);
     try {
       const fd=new FormData();
@@ -77,7 +79,7 @@ const Registration = () => {
       const res=await axios.post('/api/register.php',fd);
       if (res.data.success){setSuccessData(res.data);setStep(4);}
     } catch(e:any){
-      alert(e.response?.data?.message||e.response?.data?.error||'Registration failed. Please try again.');
+      setSubmitError(e.response?.data?.message||e.response?.data?.error||'Registration failed. Please try again.');
     } finally{setIsSubmitting(false);}
   };
 
@@ -330,16 +332,23 @@ const Registration = () => {
                   </div>
                 </div>
 
-                <div className="flex justify-between gap-3">
-                  <button onClick={prevStep} className="btn-outline flex items-center gap-2"><ArrowLeft size={16}/> Back</button>
-                  <button onClick={onSubmit} disabled={isSubmitting}
-                    className="btn-primary flex items-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:scale-100">
-                    {isSubmitting?(
-                      <><span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"/> Submitting...</>
-                    ):(
-                      <>Complete Registration <CheckCircle size={16}/></>
-                    )}
-                  </button>
+                <div className="flex flex-col gap-3">
+                  {submitError && (
+                    <div className="text-red-500 text-sm font-inter text-center mb-2 font-medium">
+                      ⚠ {submitError}
+                    </div>
+                  )}
+                  <div className="flex justify-between gap-3">
+                    <button onClick={prevStep} className="btn-outline flex items-center gap-2"><ArrowLeft size={16}/> Back</button>
+                    <button onClick={onSubmit} disabled={isSubmitting}
+                      className="btn-primary flex items-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:scale-100">
+                      {isSubmitting?(
+                        <><span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"/> Submitting...</>
+                      ):(
+                        <>Complete Registration <CheckCircle size={16}/></>
+                      )}
+                    </button>
+                  </div>
                 </div>
               </motion.div>
             )}

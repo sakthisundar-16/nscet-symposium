@@ -76,7 +76,7 @@ if ($_FILES['payment_screenshot']['error'] !== UPLOAD_ERR_OK) {
 }
 
 $file = $_FILES['payment_screenshot'];
-$allowed_types = ['image/jpeg', 'image/png', 'application/pdf'];
+$allowed_types = ['image/jpeg', 'image/jpg', 'image/pjpeg', 'image/png', 'application/pdf'];
 if (!in_array($file['type'], $allowed_types)) {
     sendJsonResponse('error', 'Only JPG, PNG, and PDF files are allowed.', null, 400);
 }
