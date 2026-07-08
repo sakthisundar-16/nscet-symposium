@@ -86,7 +86,7 @@ const CoordinatorDashboard = () => {
                   <td className="p-4 text-gray-600">Participant {item}</td>
                   <td className="p-4 text-gray-600">NSCET</td>
                   <td className="p-4 text-center">
-                    <button className="text-gray-400 hover:text-green-500 transition-colors">
+                    <button className="text-gray-400 hover:text-green-700 transition-colors">
                       <CheckCircle size={22} className="mx-auto" />
                     </button>
                   </td>

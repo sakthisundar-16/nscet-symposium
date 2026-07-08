@@ -190,7 +190,7 @@ const AdminDashboard = () => {
             </button>
           </div>
           <div className="p-4 border-t border-gray-200">
-            <button onClick={() => setIsAuthenticated(false)} className="w-full text-center text-sm text-red-500 font-medium p-2 hover:bg-red-50 rounded-lg">
+            <button onClick={() => setIsAuthenticated(false)} className="w-full text-center text-sm text-red-700 font-medium p-2 hover:bg-red-50 rounded-lg">
               Logout
             </button>
           </div>
@@ -224,7 +224,7 @@ const AdminDashboard = () => {
                 <p className="text-3xl font-bold text-gray-900">{stats.pending}</p>
               </div>
               <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
-                <h3 className="text-green-600 text-sm font-medium mb-2">Approved</h3>
+                <h3 className="text-green-800 text-sm font-medium mb-2">Approved</h3>
                 <p className="text-3xl font-bold text-gray-900">{stats.approved}</p>
               </div>
               <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
@@ -286,7 +286,7 @@ const AdminDashboard = () => {
                       {reg.screenshot_path && (
                         <button onClick={() => window.open(`/assets/uploads/${reg.screenshot_path}`, '_blank')} className="text-blue-600 hover:text-blue-800">View</button>
                       )}
-                      <button onClick={() => handleUpdateStatus(reg.id, 'approved')} className="text-green-600 hover:text-green-800">Approve</button>
+                      <button onClick={() => handleUpdateStatus(reg.id, 'approved')} className="text-green-800 hover:text-green-800">Approve</button>
                       <button onClick={() => handleUpdateStatus(reg.id, 'rejected')} className="text-red-600 hover:text-red-800">Reject</button>
                     </td>
                   </tr>

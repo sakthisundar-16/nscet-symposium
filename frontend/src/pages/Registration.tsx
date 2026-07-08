@@ -39,7 +39,7 @@ const Field = ({label, error, icon: Icon, children}: {
         <div className="[&>input]:pl-10 [&>select]:pl-10">{children}</div>
       </div>
     ) : children}
-    {error && <p className="text-red-500 text-xs mt-1.5 font-inter flex items-center gap-1"><span>⚠</span>{error}</p>}
+    {error && <p className="text-red-700 text-xs mt-1.5 font-inter flex items-center gap-1"><span>⚠</span>{error}</p>}
   </div>
 );
 
@@ -100,7 +100,7 @@ const Registration = () => {
                 className={`step-circle ${done?'step-circle-completed':active?'step-circle-active':'step-circle-inactive'}`}>
                 {done?<CheckCircle size={18}/>:<Icon size={16}/>}
               </motion.div>
-              <span className={`text-[10px] mt-2 font-bold uppercase tracking-wider font-inter ${active?'text-[#A0623E]':done?'text-green-500':'text-[#1F2937]'}`}>
+              <span className={`text-[10px] mt-2 font-bold uppercase tracking-wider font-inter ${active?'text-[#A0623E]':done?'text-green-700':'text-[#1F2937]'}`}>
                 {label}
               </span>
             </div>
@@ -121,7 +121,7 @@ const Registration = () => {
         className="glass-card-static p-12 max-w-lg w-full text-center">
         <div className="relative w-24 h-24 mx-auto mb-6">
           <span className="absolute inset-0 rounded-full bg-green-400/20 animate-pulse-glow"/>
-          <div className="relative w-24 h-24 bg-green-50 border-2 border-green-300 text-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-100">
+          <div className="relative w-24 h-24 bg-green-50 border-2 border-green-300 text-green-700 rounded-full flex items-center justify-center shadow-lg shadow-green-100">
             <CheckCircle size={46}/>
           </div>
         </div>
@@ -301,13 +301,13 @@ const Registration = () => {
 
                   <div className="flex-1 w-full space-y-5">
                     <div>
-                      <label className="form-label">Transaction / UTR ID <span className="text-red-500">*</span></label>
+                      <label className="form-label">Transaction / UTR ID <span className="text-red-700">*</span></label>
                       <input type="text" value={transactionId} onChange={e=>setTransactionId(e.target.value)}
                         className="form-input" placeholder="Enter UPI Transaction ID"/>
                     </div>
 
                     <div>
-                      <label className="form-label">Upload Payment Screenshot <span className="text-red-500">*</span></label>
+                      <label className="form-label">Upload Payment Screenshot <span className="text-red-700">*</span></label>
                       <div className="relative border-2 border-dashed border-[#C8845A]/30 rounded-2xl p-8 text-center bg-white/70 hover:border-[#C8845A]/60 hover:bg-[#F5EDE5]/20 transition-all duration-300 cursor-pointer group">
                         <input type="file" accept="image/*,.pdf"
                           className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
@@ -315,8 +315,8 @@ const Registration = () => {
                         <div className="pointer-events-none">
                           {paymentFile?(
                             <>
-                              <CheckCircle size={30} className="text-green-500 mx-auto mb-2"/>
-                              <p className="text-green-600 font-bold text-sm font-inter">{paymentFile.name}</p>
+                              <CheckCircle size={30} className="text-green-700 mx-auto mb-2"/>
+                              <p className="text-green-800 font-bold text-sm font-inter">{paymentFile.name}</p>
                               <p className="text-[#1F2937] text-xs mt-1">Click to change file</p>
                             </>
                           ):(
@@ -334,7 +334,7 @@ const Registration = () => {
 
                 <div className="flex flex-col gap-3">
                   {submitError && (
-                    <div className="text-red-500 text-sm font-inter text-center mb-2 font-medium">
+                    <div className="text-red-700 text-sm font-inter text-center mb-2 font-medium">
                       ⚠ {submitError}
                     </div>
                   )}
