@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Clock, Coffee, Award, Utensils, Sparkles } from 'lucide-react';
+import { Clock, Coffee, Award, Utensils, Flag } from 'lucide-react';
 
 const scheduleData = [
   { time:'09:30 AM', event:'Inauguration',        description:'Welcome address and keynote by the Principal and Department Heads.', type:'ceremony' },
@@ -16,7 +16,7 @@ const scheduleData = [
 /* Navy + gold / warm palette matching event logo */
 const typeConfig = {
   ceremony: {
-    icon: Sparkles,
+    icon: Flag,
     color: 'text-[#A0623E]',
     borderColor: 'border-l-[#C8845A]',
     dotFrom: 'from-[#A0623E]', dotTo: 'to-[#C8845A]',

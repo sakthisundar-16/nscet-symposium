@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Calendar, MapPin, Users, Trophy, ArrowRight, Sparkles, Code2, Palette, ChevronDown } from 'lucide-react';
+import { Calendar, MapPin, Users, Trophy, ArrowRight, Code2, Palette, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const useCounter = (target: number, duration = 1800) => {
@@ -117,7 +117,7 @@ const Home = () => {
             <motion.div initial={{ opacity: 0, x: -44 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.9, ease: [0.16,1,0.3,1] }}>
 
               <motion.span initial={{ opacity:0,y:12 }} animate={{ opacity:1,y:0 }} transition={{ delay:0.2 }} className="section-label mb-6 inline-flex">
-                <Sparkles size={12} /> National Level Technical Symposium
+                National Level Technical Symposium
               </motion.span>
 
               <motion.h1
@@ -168,7 +168,7 @@ const Home = () => {
             <motion.div initial={{ opacity:0,x:44 }} animate={{ opacity:1,x:0 }} transition={{ duration:0.9, delay:0.15, ease:[0.16,1,0.3,1] }}>
               <div className="glass-panel p-8 md:p-10">
                 <div className="mb-8 text-center">
-                  <p className="section-label mx-auto mb-3 inline-flex"><Sparkles size={11} /> Event Countdown</p>
+                  <p className="section-label mx-auto mb-3 inline-flex">Event Countdown</p>
                   <h2 className="text-2xl font-bold font-orbitron" style={{ color:'#0F2444' }}>Ready to Compete?</h2>
                 </div>
 
@@ -273,7 +273,7 @@ const Home = () => {
             <div className="absolute top-[-40px] left-[15%] w-72 h-72 rounded-full bg-[#C8845A]/14 blur-3xl pointer-events-none" />
             <div className="absolute bottom-[-30px] right-[15%] w-64 h-64 rounded-full bg-[#1B3A6B]/10 blur-3xl pointer-events-none" />
             <div className="relative z-10 px-8 py-16 md:py-20 text-center">
-              <p className="section-label inline-flex mx-auto mb-5"><Sparkles size={12} /> Seats are filling fast</p>
+              <p className="section-label inline-flex mx-auto mb-5">Seats are filling fast</p>
               <h2 className="text-3xl md:text-5xl font-black mb-5 tracking-tight" style={{ color:'#0F2444' }}>
                 Don't miss your chance to{' '}
                 <span className="text-gradient-primary">compete &amp; shine</span>

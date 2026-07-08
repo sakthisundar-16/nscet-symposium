@@ -5,7 +5,7 @@ import * as z from 'zod';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   CheckCircle, Upload, QrCode, ArrowLeft, ArrowRight,
-  Sparkles, User, Calendar, Zap, Mail, Phone, MapPin,
+  User, Calendar, CreditCard, Mail, Phone, MapPin,
   Building2, GraduationCap, MessageCircle,
 } from 'lucide-react';
 import axios from 'axios';
@@ -84,7 +84,7 @@ const Registration = () => {
   const stepMeta=[
     {label:'Personal Info',icon:User},
     {label:'Events',icon:Calendar},
-    {label:'Payment',icon:Zap},
+    {label:'Payment',icon:CreditCard},
   ];
 
   const StepIndicator=()=>(
@@ -148,7 +148,7 @@ const Registration = () => {
         {/* Header */}
         <div className="text-center mb-10">
           <motion.span initial={{opacity:0,y:10}} animate={{opacity:1,y:0}} className="section-label inline-flex mb-4">
-            <Sparkles size={12}/> Individual Registration
+            Individual Registration
           </motion.span>
           <motion.h1 initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{delay:0.1}}
             className="text-3xl md:text-4xl font-black mb-3 tracking-tight" style={{color:'#0F2444'}}>

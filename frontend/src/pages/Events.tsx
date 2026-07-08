@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   Clock, MapPin, Code, Bot, Layout, FileText, BrainCircuit, Database,
   Link as LinkIcon, Image, Video, Gamepad2, Smile, ChevronRight,
-  Sparkles, User, X, Target, Scale, Trophy, CheckCircle, Users,
+  User, X, Target, Scale, Trophy, CheckCircle, Users,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -431,7 +431,7 @@ const Events = () => {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 pt-8">
           <motion.span initial={{opacity:0,y:10}} animate={{opacity:1,y:0}} className="section-label inline-flex mb-5">
-            <Sparkles size={12}/> 11 Events · 3 Phases
+            11 Events · 3 Phases
           </motion.span>
           <motion.h1 initial={{opacity:0,y:24}} animate={{opacity:1,y:0}} transition={{delay:0.1}}
             className="text-4xl md:text-6xl font-black mb-4 tracking-tight" style={{color:'#0F2444'}}>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Zap } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const Navbar = () => {
@@ -80,8 +80,7 @@ const Navbar = () => {
         <div className="hidden lg:block relative">
           <span className="absolute -inset-1 rounded-full bg-[#C8845A]/18 animate-pulse-glow pointer-events-none" />
           <Link to="/register" className="relative btn-primary inline-flex items-center gap-2 px-6 py-2.5 text-sm">
-            <Zap size={14} className="shrink-0" />
-            Register Now
+            <span className="shrink-0 font-orbitron font-bold">Register Now</span>
           </Link>
         </div>
 
@@ -121,7 +120,7 @@ const Navbar = () => {
               ))}
               <motion.div initial={{ opacity:0,x:-18 }} animate={{ opacity:1,x:0 }} transition={{ delay:navLinks.length*0.06 }} className="pt-2">
                 <Link to="/register" className="btn-primary flex items-center justify-center gap-2 w-full py-3.5 text-sm">
-                  <Zap size={14} /> Register Now
+                  Register Now
                 </Link>
               </motion.div>
             </div>
