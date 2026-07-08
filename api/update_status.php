@@ -3,6 +3,7 @@
 require_once __DIR__ . '/../includes/config.php';
 require_once __DIR__ . '/../includes/db.php';
 require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../includes/mailer.php';
 
 header('Content-Type: application/json');
 
@@ -40,7 +41,46 @@ try {
 
     $db->commit();
 
-    echo json_encode(['success' => true, 'message' => 'Status updated successfully']);
+    $emailSent = false;
+    // Send email notification if approved
+    if ($status === 'approved') {
+        // Fetch participant and registration details
+        $stmtDetails = $db->prepare("
+            SELECT p.full_name, p.email, r.registration_number
+            FROM registrations r
+            JOIN participants p ON r.participant_id = p.id
+            WHERE r.id = ?
+        ");
+        $stmtDetails->execute([$id]);
+        $participant = $stmtDetails->fetch();
+
+        if ($participant) {
+            // Fetch registered events
+            $stmtEvents = $db->prepare("
+                SELECT e.name, e.type, re.phase
+                FROM registration_events re
+                JOIN events e ON re.event_id = e.id
+                WHERE re.registration_id = ?
+            ");
+            $stmtEvents->execute([$id]);
+            $eventsList = $stmtEvents->fetchAll();
+
+            // Prepare and send email
+            $subject = 'Registration Approved - SYNTAX 2K26';
+            $htmlBody = get_registration_success_email_html(
+                $participant['full_name'], 
+                $participant['registration_number'], 
+                $eventsList
+            );
+
+            $emailSent = send_email($participant['email'], $participant['full_name'], $subject, $htmlBody);
+        }
+    }
+
+    echo json_encode([
+        'success' => true, 
+        'message' => 'Status updated successfully' . ($status === 'approved' ? ($emailSent ? ' and email sent' : ', but failed to send email (check SMTP configs)') : '')
+    ]);
 } catch (PDOException $e) {
     if ($db->inTransaction()) {
         $db->rollBack();
