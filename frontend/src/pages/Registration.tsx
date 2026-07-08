@@ -100,7 +100,7 @@ const Registration = () => {
                 className={`step-circle ${done?'step-circle-completed':active?'step-circle-active':'step-circle-inactive'}`}>
                 {done?<CheckCircle size={18}/>:<Icon size={16}/>}
               </motion.div>
-              <span className={`text-[10px] mt-2 font-bold uppercase tracking-wider font-inter ${active?'text-[#A0623E]':done?'text-green-500':'text-[#4A6080]'}`}>
+              <span className={`text-[10px] mt-2 font-bold uppercase tracking-wider font-inter ${active?'text-[#A0623E]':done?'text-green-500':'text-[#1F2937]'}`}>
                 {label}
               </span>
             </div>
@@ -125,12 +125,12 @@ const Registration = () => {
             <CheckCircle size={46}/>
           </div>
         </div>
-        <h2 className="text-3xl font-bold mb-2 font-orbitron" style={{color:'#0F2444'}}>You're In! 🎉</h2>
-        <p className="text-[#4A6080] mb-6 font-inter">Registration successful. Your ID:</p>
+        <h2 className="text-3xl font-bold mb-2 font-orbitron" style={{color:'#000000'}}>You're In! 🎉</h2>
+        <p className="text-[#1F2937] mb-6 font-inter">Registration successful. Your ID:</p>
         <div className="text-4xl font-mono font-black text-[#A0623E] mb-5 bg-gradient-to-r from-[#F5EDE5] to-[#EEF2F8] border border-[#C8845A]/30 py-5 rounded-2xl tracking-widest shadow-inner">
           {successData.registration_number}
         </div>
-        <p className="text-xs text-[#4A6080] mb-8 font-inter leading-relaxed">
+        <p className="text-xs text-[#1F2937] mb-8 font-inter leading-relaxed">
           Save this ID for future reference. A confirmation email with your PDF receipt will be sent shortly.
         </p>
         <button onClick={()=>window.print()} className="btn-primary w-full flex items-center justify-center gap-2 py-4">
@@ -153,10 +153,10 @@ const Registration = () => {
             Individual Registration
           </motion.span>
           <motion.h1 initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{delay:0.1}}
-            className="text-3xl md:text-4xl font-black mb-3 tracking-tight" style={{color:'#0F2444'}}>
+            className="text-3xl md:text-4xl font-black mb-3 tracking-tight" style={{color:'#000000'}}>
             Register for <span className="text-gradient-primary">SYNTAX 2K26</span>
           </motion.h1>
-          <motion.p initial={{opacity:0}} animate={{opacity:1}} transition={{delay:0.16}} className="text-[#4A6080] font-inter mb-4">
+          <motion.p initial={{opacity:0}} animate={{opacity:1}} transition={{delay:0.16}} className="text-[#1F2937] font-inter mb-4">
             National Level Technical Symposium — August 7, 2026
           </motion.p>
           <motion.div initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} transition={{delay:0.22}}
@@ -173,8 +173,8 @@ const Registration = () => {
             {/* ── STEP 1 ── */}
             {step===1&&(
               <motion.div key="s1" initial={{opacity:0,x:28}} animate={{opacity:1,x:0}} exit={{opacity:0,x:-28}} transition={{duration:0.28}}>
-                <h2 className="text-xl font-bold mb-1 font-orbitron" style={{color:'#0F2444'}}>Personal Information</h2>
-                <p className="text-[#4A6080] text-sm mb-6 font-inter">Fill in your details to proceed.</p>
+                <h2 className="text-xl font-bold mb-1 font-orbitron" style={{color:'#000000'}}>Personal Information</h2>
+                <p className="text-[#1F2937] text-sm mb-6 font-inter">Fill in your details to proceed.</p>
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-[#C8845A]/30 to-transparent mb-7"/>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -237,8 +237,8 @@ const Registration = () => {
             {/* ── STEP 2 ── */}
             {step===2&&(
               <motion.div key="s2" initial={{opacity:0,x:28}} animate={{opacity:1,x:0}} exit={{opacity:0,x:-28}} transition={{duration:0.28}}>
-                <h2 className="text-xl font-bold mb-1 font-orbitron" style={{color:'#0F2444'}}>Event Selection</h2>
-                <p className="text-[#4A6080] text-sm mb-6 font-inter">Pick one event per phase — max 3 events total.</p>
+                <h2 className="text-xl font-bold mb-1 font-orbitron" style={{color:'#000000'}}>Event Selection</h2>
+                <p className="text-[#1F2937] text-sm mb-6 font-inter">Pick one event per phase — max 3 events total.</p>
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-[#C8845A]/30 to-transparent mb-7"/>
 
                 <div className="bg-[#F5EDE5] border border-[#C8845A]/25 rounded-2xl p-4 mb-7 flex items-start gap-3">
@@ -255,7 +255,7 @@ const Registration = () => {
                     {phase:'PHASE 3', color:'border-l-[#C8845A]',   opts:[{v:'7',l:'Connection'},{v:'8',l:'Logo Guessing'},{v:'9',l:'Short Film Challenge'},{v:'10',l:'Free Fire Tournament'},{v:'11',l:'Meme Challenge'}]},
                   ].map(({phase,color,opts})=>(
                     <div key={phase} className={`border-l-4 ${color} pl-4`}>
-                      <label className="form-label font-bold" style={{color:'#0F2444'}}>{phase}</label>
+                      <label className="form-label font-bold" style={{color:'#000000'}}>{phase}</label>
                       <select className="form-select" onChange={e=>setSelectedEvents(s=>({...s,[phase]:e.target.value||null}))}>
                         <option value="">— Skip this phase —</option>
                         {opts.map(({v,l})=><option key={v} value={v}>{l}</option>)}
@@ -274,8 +274,8 @@ const Registration = () => {
             {/* ── STEP 3 ── */}
             {step===3&&(
               <motion.div key="s3" initial={{opacity:0,x:28}} animate={{opacity:1,x:0}} exit={{opacity:0,x:-28}} transition={{duration:0.28}}>
-                <h2 className="text-xl font-bold mb-1 font-orbitron" style={{color:'#0F2444'}}>Payment Details</h2>
-                <p className="text-[#4A6080] text-sm mb-6 font-inter">Scan the QR code, pay ₹350, and upload your receipt.</p>
+                <h2 className="text-xl font-bold mb-1 font-orbitron" style={{color:'#000000'}}>Payment Details</h2>
+                <p className="text-[#1F2937] text-sm mb-6 font-inter">Scan the QR code, pay ₹350, and upload your receipt.</p>
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-[#C8845A]/30 to-transparent mb-7"/>
 
                 <div className="flex flex-col md:flex-row gap-8 items-start mb-8">
@@ -295,7 +295,7 @@ const Registration = () => {
                     <div className="text-center mt-4">
                       <p className="text-3xl font-black text-gradient-primary font-orbitron mb-1">₹350</p>
                       <p className="text-xs font-bold text-[#1B3A6B] font-inter">nadarsaraswathicollege@tmb</p>
-                      <p className="text-[10px] text-[#4A6080] font-inter mt-0.5">Scan to pay via any UPI app</p>
+                      <p className="text-[10px] text-[#1F2937] font-inter mt-0.5">Scan to pay via any UPI app</p>
                     </div>
                   </div>
 
@@ -317,13 +317,13 @@ const Registration = () => {
                             <>
                               <CheckCircle size={30} className="text-green-500 mx-auto mb-2"/>
                               <p className="text-green-600 font-bold text-sm font-inter">{paymentFile.name}</p>
-                              <p className="text-[#4A6080] text-xs mt-1">Click to change file</p>
+                              <p className="text-[#1F2937] text-xs mt-1">Click to change file</p>
                             </>
                           ):(
                             <>
                               <Upload size={30} className="text-[#C8845A]/50 mx-auto mb-2 group-hover:text-[#A0623E] transition-colors"/>
-                              <p className="text-[#4A6080] text-sm font-inter font-semibold">Click or drag to upload</p>
-                              <p className="text-[#4A6080]/60 text-xs mt-1">Any Image format or PDF · Max 10MB</p>
+                              <p className="text-[#1F2937] text-sm font-inter font-semibold">Click or drag to upload</p>
+                              <p className="text-[#1F2937]/60 text-xs mt-1">Any Image format or PDF · Max 10MB</p>
                             </>
                           )}
                         </div>

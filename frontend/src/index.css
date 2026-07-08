@@ -8,7 +8,7 @@
 @theme {
   /* Navy blues (logo background) */
   --color-navy:          #1B3A6B;
-  --color-navy-deep:     #0F2444;
+  --color-navy-deep:     #000000;
   --color-navy-mid:      #1E4080;
   --color-navy-light:    #2D5BA3;
 
@@ -24,8 +24,8 @@
   --color-surface-2:     #EEF2F8;
 
   /* Accent whites for contrast */
-  --color-text-primary:  #0F2444;
-  --color-text-muted:    #4A6080;
+  --color-text-primary:  #000000;
+  --color-text-muted:    #1F2937;
 
   --font-orbitron: "Orbitron", sans-serif;
   --font-inter:    "Inter", sans-serif;
@@ -38,12 +38,12 @@
 
   body {
     @apply bg-background antialiased;
-    color: #0F2444;
+    color: #000000;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-orbitron tracking-wide;
-    color: #0F2444;
+    color: #000000;
   }
 
   * { @apply box-border; }
@@ -234,7 +234,7 @@
     width: 100%;
     background: rgba(255, 255, 255, 0.96);
     border: 1.5px solid rgba(27, 58, 107, 0.16);
-    color: #0F2444;
+    color: #000000;
     border-radius: 0.875rem;
     padding: 0.8125rem 1rem;
     transition: all 0.25s ease;
@@ -267,7 +267,7 @@
     width: 100%;
     background: rgba(255, 255, 255, 0.96);
     border: 1.5px solid rgba(27, 58, 107, 0.16);
-    color: #0F2444;
+    color: #000000;
     border-radius: 0.875rem;
     padding: 0.8125rem 1rem;
     appearance: none;
@@ -341,7 +341,7 @@
     box-shadow: 0 4px 20px rgba(27,58,107,0.40), 0 2px 6px rgba(27,58,107,0.22);
     transform: scale(1.04);
   }
-  .phase-pill-inactive { color: #4A6080; }
+  .phase-pill-inactive { color: #1F2937; }
   .phase-pill-inactive:hover {
     color: #1B3A6B;
     background: rgba(27,58,107,0.08);
@@ -350,7 +350,7 @@
 
   /* ── Navy surface card ── */
   .navy-card {
-    background: linear-gradient(135deg, #1B3A6B 0%, #0F2444 100%);
+    background: linear-gradient(135deg, #1B3A6B 0%, #000000 100%);
     border: 1px solid rgba(200, 132, 90, 0.25);
     border-radius: 1.25rem;
     box-shadow:
@@ -426,7 +426,7 @@
 ::-webkit-scrollbar-thumb:hover { background: #A0623E; }
 
 /* ── Selection ───────────────────────────────────────────────────────── */
-::selection { background: rgba(200,132,90,0.20); color: #0F2444; }
+::selection { background: rgba(200,132,90,0.20); color: #000000; }
 
 /* Modal Custom Scrollbar */
 .custom-scrollbar::-webkit-scrollbar {

@@ -45,10 +45,10 @@ const Navbar = () => {
             onError={e => { e.currentTarget.style.display = 'none'; }}
           />
           <div className="hidden sm:block">
-            <p className="text-sm font-black font-orbitron tracking-wider leading-tight" style={{ color:'#0F2444' }}>
+            <p className="text-sm font-black font-orbitron tracking-wider leading-tight" style={{ color:'#000000' }}>
               SYNTAX <span className="text-gradient-primary">2K26</span>
             </p>
-            <p className="text-[9px] text-[#4A6080] tracking-[0.18em] uppercase font-inter font-semibold mt-0.5">
+            <p className="text-[9px] text-[#1F2937] tracking-[0.18em] uppercase font-inter font-semibold mt-0.5">
               NSCET · Faculty of Computing
             </p>
           </div>

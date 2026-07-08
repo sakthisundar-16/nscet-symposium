@@ -247,7 +247,7 @@ const EventModal = ({ event, onClose }: { event: EventItem; onClose: () => void 
         onClick={e => e.stopPropagation()}
       >
         {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0F2444] via-[#1B3A6B] to-[#0F2444] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#000000] via-[#1B3A6B] to-[#000000] pointer-events-none" />
         <div className="absolute inset-0 rounded-3xl border border-[#C8845A]/30 pointer-events-none" />
         {/* Gold accent orbs */}
         <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-[#C8845A]/10 blur-3xl pointer-events-none" />
@@ -434,11 +434,11 @@ const Events = () => {
             11 Events · 3 Phases
           </motion.span>
           <motion.h1 initial={{opacity:0,y:24}} animate={{opacity:1,y:0}} transition={{delay:0.1}}
-            className="text-4xl md:text-6xl font-black mb-4 tracking-tight" style={{color:'#0F2444'}}>
+            className="text-4xl md:text-6xl font-black mb-4 tracking-tight" style={{color:'#000000'}}>
             Explore Events
           </motion.h1>
           <motion.p initial={{opacity:0,y:16}} animate={{opacity:1,y:0}} transition={{delay:0.16}}
-            className="text-lg text-[#4A6080] font-inter">
+            className="text-lg text-[#1F2937] font-inter">
             Click any event card to view full rules, judging criteria &amp; details.
           </motion.p>
           <motion.div initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} transition={{delay:0.24}}
@@ -466,7 +466,7 @@ const Events = () => {
 
         <AnimatePresence mode="wait">
           <motion.p key={activePhase+'-d'} initial={{opacity:0,y:-6}} animate={{opacity:1,y:0}} exit={{opacity:0,y:6}}
-            className="text-center text-[#4A6080] text-sm mb-12 font-inter">
+            className="text-center text-[#1F2937] text-sm mb-12 font-inter">
             {phaseDesc[activePhase]}
           </motion.p>
         </AnimatePresence>
@@ -496,16 +496,16 @@ const Events = () => {
                       </span>
                     </div>
 
-                    <h3 className="text-xl font-bold mb-2 font-orbitron group-hover:text-[#A0623E] transition-colors duration-300" style={{color:'#0F2444'}}>
+                    <h3 className="text-xl font-bold mb-2 font-orbitron group-hover:text-[#A0623E] transition-colors duration-300" style={{color:'#000000'}}>
                       {event.name}
                     </h3>
-                    <p className="text-[#4A6080] mb-6 line-clamp-2 text-sm leading-relaxed font-inter">{event.description}</p>
+                    <p className="text-[#1F2937] mb-6 line-clamp-2 text-sm leading-relaxed font-inter">{event.description}</p>
 
                     <div className="space-y-2">
-                      <div className="flex items-center text-sm text-[#4A6080] font-inter bg-[#EEF2F8]/80 rounded-xl px-3.5 py-2.5 border border-[#1B3A6B]/10">
+                      <div className="flex items-center text-sm text-[#1F2937] font-inter bg-[#EEF2F8]/80 rounded-xl px-3.5 py-2.5 border border-[#1B3A6B]/10">
                         <Clock size={13} className="mr-2.5 text-[#1B3A6B] shrink-0"/> {event.duration}
                       </div>
-                      <div className="flex items-center text-sm text-[#4A6080] font-inter bg-[#F5EDE5]/80 rounded-xl px-3.5 py-2.5 border border-[#C8845A]/15">
+                      <div className="flex items-center text-sm text-[#1F2937] font-inter bg-[#F5EDE5]/80 rounded-xl px-3.5 py-2.5 border border-[#C8845A]/15">
                         <MapPin size={13} className="mr-2.5 text-[#A0623E] shrink-0"/> {event.venue}
                       </div>
                     </div>
@@ -517,7 +517,7 @@ const Events = () => {
                       <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#1B3A6B] to-[#C8845A] flex items-center justify-center text-white font-bold text-xs shadow-sm">
                         {event.coordinator.replace('Ms. ','').replace('Mr. ','').charAt(0)}
                       </div>
-                      <span className="text-xs font-semibold text-[#4A6080] font-inter">{event.coordinator}</span>
+                      <span className="text-xs font-semibold text-[#1F2937] font-inter">{event.coordinator}</span>
                     </div>
                     <span className="flex items-center gap-1 text-[#A0623E] text-sm font-bold font-inter group-hover:text-[#1B3A6B] transition-all duration-200">
                       View Details <ChevronRight size={14} className="group-hover:translate-x-0.5 transition-transform"/>

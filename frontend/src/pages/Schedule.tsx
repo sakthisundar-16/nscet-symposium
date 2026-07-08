@@ -66,13 +66,13 @@ const Schedule = () => (
           <Clock size={12}/> August 7, 2026
         </motion.span>
         <motion.h1 initial={{opacity:0,y:24}} animate={{opacity:1,y:0}} transition={{delay:0.1}}
-          className="text-4xl md:text-6xl font-black mb-4 tracking-tight" style={{color:'#0F2444'}}>
+          className="text-4xl md:text-6xl font-black mb-4 tracking-tight" style={{color:'#000000'}}>
           Event Schedule
         </motion.h1>
         <motion.div initial={{scaleX:0}} animate={{scaleX:1}} transition={{delay:0.2,duration:0.6}}
           className="divider-glow w-24 mx-auto mb-5"/>
         <motion.p initial={{opacity:0,y:12}} animate={{opacity:1,y:0}} transition={{delay:0.25}}
-          className="text-lg text-[#4A6080] font-inter">
+          className="text-lg text-[#1F2937] font-inter">
           Plan your day. Make every minute count.
         </motion.p>
       </div>
@@ -122,10 +122,10 @@ const Schedule = () => (
                       </span>
                     </div>
 
-                    <h3 className="text-lg font-bold mb-1.5 font-orbitron transition-colors duration-300" style={{color:'#0F2444'}}>
+                    <h3 className="text-lg font-bold mb-1.5 font-orbitron transition-colors duration-300" style={{color:'#000000'}}>
                       {item.event}
                     </h3>
-                    <p className="text-[#4A6080] text-sm leading-relaxed font-inter">{item.description}</p>
+                    <p className="text-[#1F2937] text-sm leading-relaxed font-inter">{item.description}</p>
                   </motion.div>
                 </div>
               </motion.div>

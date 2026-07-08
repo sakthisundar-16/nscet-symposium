@@ -40,7 +40,7 @@ const StatCard = ({ label, value, suffix, icon: Icon, delay }: {
       <p className="text-4xl md:text-5xl font-black font-orbitron mb-1 text-gradient-primary tabular-nums">
         {count}{suffix}
       </p>
-      <p className="text-xs uppercase tracking-[0.22em] text-[#4A6080] font-inter font-semibold">{label}</p>
+      <p className="text-xs uppercase tracking-[0.22em] text-[#1F2937] font-inter font-semibold">{label}</p>
     </motion.div>
   );
 };
@@ -124,7 +124,7 @@ const Home = () => {
                 initial={{ opacity:0,y:28 }} animate={{ opacity:1,y:0 }}
                 transition={{ delay:0.32, duration:0.8, ease:[0.16,1,0.3,1] }}
                 className="text-7xl lg:text-8xl xl:text-9xl font-bubbly tracking-wide mb-5 leading-[0.95]"
-                style={{ color: '#0F2444' }}
+                style={{ color: '#000000' }}
               >
                 SYNTAX
                 <br />
@@ -137,7 +137,7 @@ const Home = () => {
                 <div className="divider-glow w-10 h-px" />
               </motion.div>
 
-              <motion.p initial={{ opacity:0,y:16 }} animate={{ opacity:1,y:0 }} transition={{ delay:0.54 }} className="text-lg leading-relaxed mb-10 max-w-lg font-inter text-[#4A6080]">
+              <motion.p initial={{ opacity:0,y:16 }} animate={{ opacity:1,y:0 }} transition={{ delay:0.54 }} className="text-lg leading-relaxed mb-10 max-w-lg font-inter text-[#1F2937]">
                 A full-day immersive festival of technology, innovation, and competition hosted by the Faculty of Computing at <strong className="text-[#1B3A6B]">NSCET, Theni.</strong>
               </motion.p>
 
@@ -169,7 +169,7 @@ const Home = () => {
               <div className="glass-panel p-8 md:p-10">
                 <div className="mb-8 text-center">
                   <p className="section-label mx-auto mb-3 inline-flex">Event Countdown</p>
-                  <h2 className="text-2xl font-bold font-orbitron" style={{ color:'#0F2444' }}>Ready to Compete?</h2>
+                  <h2 className="text-2xl font-bold font-orbitron" style={{ color:'#000000' }}>Ready to Compete?</h2>
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
@@ -178,7 +178,7 @@ const Home = () => {
                       <div className="relative rounded-2xl bg-white/85 border border-[#C8845A]/20 p-4 text-center overflow-hidden transition-all duration-300 group-hover:border-[#C8845A]/50 group-hover:shadow-lg group-hover:shadow-[#C8845A]/15">
                         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-shimmer rounded-2xl" />
                         <p className="text-4xl font-black font-orbitron mb-1 relative z-10 text-gradient-primary tabular-nums">{value}</p>
-                        <span className="text-[10px] uppercase tracking-[0.28em] text-[#4A6080] font-inter relative z-10 font-semibold">{unit}</span>
+                        <span className="text-[10px] uppercase tracking-[0.28em] text-[#1F2937] font-inter relative z-10 font-semibold">{unit}</span>
                       </div>
                     </div>
                   ))}
@@ -194,8 +194,8 @@ const Home = () => {
                         <Icon size={14} />
                       </div>
                       <div>
-                        <p className="text-[10px] text-[#4A6080] uppercase tracking-widest font-inter font-semibold">{label}</p>
-                        <p className="text-xs font-bold font-inter" style={{ color:'#0F2444' }}>{val}</p>
+                        <p className="text-[10px] text-[#1F2937] uppercase tracking-widest font-inter font-semibold">{label}</p>
+                        <p className="text-xs font-bold font-inter" style={{ color:'#000000' }}>{val}</p>
                       </div>
                     </div>
                   ))}
@@ -241,7 +241,7 @@ const Home = () => {
             <motion.span initial={{ opacity:0,y:10 }} whileInView={{ opacity:1,y:0 }} viewport={{ once:true }} className="section-label inline-flex mb-5">
               Why Attend
             </motion.span>
-            <motion.h2 initial={{ opacity:0,y:20 }} whileInView={{ opacity:1,y:0 }} viewport={{ once:true }} transition={{ delay:0.1 }} className="text-3xl md:text-4xl font-bold leading-tight" style={{ color:'#0F2444' }}>
+            <motion.h2 initial={{ opacity:0,y:20 }} whileInView={{ opacity:1,y:0 }} viewport={{ once:true }} transition={{ delay:0.1 }} className="text-3xl md:text-4xl font-bold leading-tight" style={{ color:'#000000' }}>
               A compelling experience for every tech student
             </motion.h2>
           </div>
@@ -253,10 +253,10 @@ const Home = () => {
                 <div className="relative w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-[#A0623E] border border-[#C8845A]/25 bg-gradient-to-br from-[#F5F0EB] to-[#EEE8E0] group-hover:from-[#1B3A6B] group-hover:to-[#2D5BA3] group-hover:text-white group-hover:border-transparent group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#1B3A6B]/25 transition-all duration-350">
                   <f.icon size={24} />
                 </div>
-                <h3 className="relative text-xl font-bold mb-3 font-orbitron group-hover:text-[#A0623E] transition-colors duration-300" style={{ color:'#0F2444' }}>
+                <h3 className="relative text-xl font-bold mb-3 font-orbitron group-hover:text-[#A0623E] transition-colors duration-300" style={{ color:'#000000' }}>
                   {f.title}
                 </h3>
-                <p className="relative text-sm leading-relaxed text-[#4A6080] font-inter">{f.description}</p>
+                <p className="relative text-sm leading-relaxed text-[#1F2937] font-inter">{f.description}</p>
               </motion.div>
             ))}
           </div>
@@ -274,11 +274,11 @@ const Home = () => {
             <div className="absolute bottom-[-30px] right-[15%] w-64 h-64 rounded-full bg-[#1B3A6B]/10 blur-3xl pointer-events-none" />
             <div className="relative z-10 px-8 py-16 md:py-20 text-center">
               <p className="section-label inline-flex mx-auto mb-5">Seats are filling fast</p>
-              <h2 className="text-3xl md:text-5xl font-black mb-5 tracking-tight" style={{ color:'#0F2444' }}>
+              <h2 className="text-3xl md:text-5xl font-black mb-5 tracking-tight" style={{ color:'#000000' }}>
                 Don't miss your chance to{' '}
                 <span className="text-gradient-primary">compete &amp; shine</span>
               </h2>
-              <p className="text-[#4A6080] text-lg mb-10 max-w-xl mx-auto font-inter">
+              <p className="text-[#1F2937] text-lg mb-10 max-w-xl mx-auto font-inter">
                 Register as an individual and secure your spot at Tamil Nadu's premier student tech symposium.
               </p>
               <Link to="/register" className="btn-primary inline-flex items-center gap-2 px-10 py-4 text-base">

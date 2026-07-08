@@ -23,13 +23,13 @@ const About = () => (
           About the Symposium
         </motion.span>
         <motion.h1 initial={{opacity:0,y:24}} animate={{opacity:1,y:0}} transition={{delay:0.1}}
-          className="text-4xl md:text-6xl font-black mb-6 tracking-tight leading-tight" style={{color:'#0F2444'}}>
+          className="text-4xl md:text-6xl font-black mb-6 tracking-tight leading-tight" style={{color:'#000000'}}>
           About <span className="text-gradient-primary">SYNTAX 2K26</span>
         </motion.h1>
         <motion.div initial={{scaleX:0}} animate={{scaleX:1}} transition={{delay:0.2,duration:0.6}}
           className="divider-glow w-24 mx-auto mb-6"/>
         <motion.p initial={{opacity:0,y:16}} animate={{opacity:1,y:0}} transition={{delay:0.25}}
-          className="text-lg md:text-xl text-[#4A6080] max-w-3xl mx-auto leading-relaxed font-inter">
+          className="text-lg md:text-xl text-[#1F2937] max-w-3xl mx-auto leading-relaxed font-inter">
           The flagship National Level Technical Symposium by the Faculty of Computing at NSCET, Theni — where technology meets creativity and competition.
         </motion.p>
       </div>
@@ -53,7 +53,7 @@ const About = () => (
             <div className="w-1 h-12 rounded-full bg-gradient-to-b from-[#1B3A6B] to-[#C8845A]"/>
             <div>
               <span className="section-label inline-flex mb-1">National Level Technical Symposium</span>
-              <h2 className="text-2xl md:text-3xl font-black font-orbitron" style={{color:'#0F2444'}}>
+              <h2 className="text-2xl md:text-3xl font-black font-orbitron" style={{color:'#000000'}}>
                 About <span className="text-gradient-primary">SYNTAX 2K26</span>
               </h2>
             </div>
@@ -61,7 +61,7 @@ const About = () => (
 
           <div className="space-y-5 max-w-4xl">
             <p className="text-[15px] md:text-base leading-[1.85] text-[#2D4A6A] font-inter">
-              <span className="font-bold text-[#0F2444]">SYNTAX 2K26</span> is the flagship National Level Technical Symposium organized by the{' '}
+              <span className="font-bold text-[#000000]">SYNTAX 2K26</span> is the flagship National Level Technical Symposium organized by the{' '}
               <span className="font-semibold text-[#A0623E]">Faculty of Computing (CSE, IT &amp; AIDS Department)</span> at{' '}
               <span className="font-semibold text-[#1B3A6B]">Nadar Saraswathi College of Engineering and Technology, Theni.</span>
             </p>
@@ -84,8 +84,8 @@ const About = () => (
               { label:'Date',         value:'August 7, 2026' },
             ].map(({label,value})=>(
               <div key={label} className="bg-white/80 border border-[#C8845A]/22 rounded-2xl px-5 py-3 shadow-sm">
-                <p className="text-[10px] text-[#4A6080] uppercase tracking-[0.18em] font-inter font-semibold mb-0.5">{label}</p>
-                <p className="text-sm font-bold font-inter" style={{color:'#0F2444'}}>{value}</p>
+                <p className="text-[10px] text-[#1F2937] uppercase tracking-[0.18em] font-inter font-semibold mb-0.5">{label}</p>
+                <p className="text-sm font-bold font-inter" style={{color:'#000000'}}>{value}</p>
               </div>
             ))}
           </div>
@@ -112,9 +112,9 @@ const About = () => (
               <div className="w-12 h-12 bg-gradient-to-br from-[#F0EBE0] to-[#EEF2F8] border border-[#C8845A]/25 text-[#A0623E] rounded-2xl flex items-center justify-center mr-4 group-hover:from-[#1B3A6B] group-hover:to-[#2D5BA3] group-hover:text-white group-hover:border-transparent group-hover:shadow-lg group-hover:shadow-[#1B3A6B]/25 transition-all duration-350">
                 <Icon size={22}/>
               </div>
-              <h2 className="text-2xl font-bold font-orbitron" style={{color:'#0F2444'}}>{title}</h2>
+              <h2 className="text-2xl font-bold font-orbitron" style={{color:'#000000'}}>{title}</h2>
             </div>
-            <p className="text-[#4A6080] leading-relaxed font-inter text-[15px]">{body}</p>
+            <p className="text-[#1F2937] leading-relaxed font-inter text-[15px]">{body}</p>
           </motion.div>
         ))}
       </div>
@@ -127,8 +127,8 @@ const About = () => (
             <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#EEF2F8] to-[#F0EBE0] border border-[#C8845A]/22 text-[#A0623E] flex items-center justify-center mx-auto mb-4 group-hover:from-[#1B3A6B] group-hover:to-[#2D5BA3] group-hover:text-white group-hover:border-transparent group-hover:shadow-lg group-hover:shadow-[#1B3A6B]/25 transition-all duration-350">
               <v.icon size={22}/>
             </div>
-            <h3 className="text-base font-bold mb-2 font-orbitron" style={{color:'#0F2444'}}>{v.label}</h3>
-            <p className="text-[#4A6080] text-sm leading-relaxed font-inter">{v.desc}</p>
+            <h3 className="text-base font-bold mb-2 font-orbitron" style={{color:'#000000'}}>{v.label}</h3>
+            <p className="text-[#1F2937] text-sm leading-relaxed font-inter">{v.desc}</p>
           </motion.div>
         ))}
       </div>
@@ -145,7 +145,7 @@ const About = () => (
         <div className="relative z-10 p-10 md:p-14">
           <div className="text-center mb-12">
             <span className="section-label inline-flex mb-4">Vision &amp; Mission</span>
-            <h2 className="text-3xl md:text-4xl font-bold font-orbitron" style={{color:'#0F2444'}}>Our Guiding Principles</h2>
+            <h2 className="text-3xl md:text-4xl font-bold font-orbitron" style={{color:'#000000'}}>Our Guiding Principles</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
@@ -154,9 +154,9 @@ const About = () => (
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#F5EDE5] to-[#EEF2F8] border border-[#C8845A]/25 text-[#A0623E] flex items-center justify-center mr-3 shadow-sm">
                   <Target size={20}/>
                 </div>
-                <h3 className="text-xl font-bold font-orbitron" style={{color:'#0F2444'}}>Vision</h3>
+                <h3 className="text-xl font-bold font-orbitron" style={{color:'#000000'}}>Vision</h3>
               </div>
-              <p className="text-[#4A6080] leading-relaxed font-inter text-[15px]">
+              <p className="text-[#1F2937] leading-relaxed font-inter text-[15px]">
                 To emerge as a center of excellence in computing education and research, producing globally competent professionals with strong ethical values who contribute to the socio-economic development of the nation.
               </p>
             </div>
@@ -166,9 +166,9 @@ const About = () => (
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#EEF2F8] to-[#F5EDE5] border border-[#1B3A6B]/18 text-[#1B3A6B] flex items-center justify-center mr-3 shadow-sm">
                   <CheckCircle size={20}/>
                 </div>
-                <h3 className="text-xl font-bold font-orbitron" style={{color:'#0F2444'}}>Mission</h3>
+                <h3 className="text-xl font-bold font-orbitron" style={{color:'#000000'}}>Mission</h3>
               </div>
-              <ul className="space-y-3 text-[#4A6080] font-inter text-[15px]">
+              <ul className="space-y-3 text-[#1F2937] font-inter text-[15px]">
                 {[
                   'Provide strong foundational knowledge and advanced skills.',
                   'Promote an environment of continuous learning and innovation.',
@@ -200,7 +200,7 @@ const About = () => (
         {/* Card */}
         <div className="relative rounded-3xl overflow-hidden border border-[#C8845A]/35 shadow-[0_0_60px_rgba(27,58,107,0.18),0_0_30px_rgba(200,132,90,0.14)]">
           {/* Background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0F2444] via-[#1B3A6B] to-[#0F2444]"/>
+          <div className="absolute inset-0 bg-gradient-to-br from-[#000000] via-[#1B3A6B] to-[#000000]"/>
           {/* Shimmer overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.03] to-transparent"/>
           {/* Corner accent orbs */}

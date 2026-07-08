@@ -38,7 +38,7 @@ const Footer = () => {
 
             {/* Brand */}
             <div>
-              <h3 className="text-2xl font-black font-orbitron mb-4 tracking-wide" style={{ color:'#0F2444' }}>
+              <h3 className="text-2xl font-black font-orbitron mb-4 tracking-wide" style={{ color:'#000000' }}>
                 SYNTAX <span className="text-gradient-primary">2K26</span>
               </h3>
               <p className="text-sm leading-relaxed text-[#2D4A6A] mb-6 font-inter max-w-xs">
@@ -55,7 +55,7 @@ const Footer = () => {
 
             {/* Explore */}
             <div>
-              <h4 className="font-bold mb-5 font-orbitron text-xs tracking-[0.20em] uppercase" style={{ color:'#0F2444' }}>Explore</h4>
+              <h4 className="font-bold mb-5 font-orbitron text-xs tracking-[0.20em] uppercase" style={{ color:'#000000' }}>Explore</h4>
               <ul className="space-y-3">
                 {navLinks.map(({ label, path }) => (
                   <li key={label}>
@@ -70,7 +70,7 @@ const Footer = () => {
 
             {/* Contact */}
             <div>
-              <h4 className="font-bold mb-5 font-orbitron text-xs tracking-[0.20em] uppercase" style={{ color:'#0F2444' }}>Contact Us</h4>
+              <h4 className="font-bold mb-5 font-orbitron text-xs tracking-[0.20em] uppercase" style={{ color:'#000000' }}>Contact Us</h4>
               <ul className="space-y-4">
                 {contactItems.map(({ icon: Icon, text }) => (
                   <li key={text} className="flex gap-3 items-start group">
@@ -88,7 +88,7 @@ const Footer = () => {
           {/* Divider */}
           <div className="h-px bg-gradient-to-r from-transparent via-[#C8845A]/40 to-transparent mb-6" />
 
-          <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-3 text-xs text-[#4A6080] font-inter">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-3 text-xs text-[#1F2937] font-inter">
             <p>&copy; {year} SYNTAX 2K26 · NSCET Faculty of Computing. All rights reserved.</p>
             <span className="hidden md:inline">·</span>
             <p>Built by <span className="font-semibold text-[#1B3A6B]">iSpin Engineers</span></p>
