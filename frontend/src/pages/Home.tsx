@@ -123,12 +123,17 @@ const Home = () => {
               <motion.h1
                 initial={{ opacity:0,y:28 }} animate={{ opacity:1,y:0 }}
                 transition={{ delay:0.32, duration:0.8, ease:[0.16,1,0.3,1] }}
-                className="text-6xl lg:text-7xl xl:text-8xl font-elegant font-normal tracking-wide mb-5 leading-[1.05]"
-                style={{ color: '#0F2444' }}
+                className="text-6xl lg:text-7xl xl:text-8xl font-black tracking-tighter mb-5 leading-[0.92]"
               >
-                SYNTAX
+                <div className="relative inline-block text-[#0F2444]">
+                  <span className="absolute top-0 left-0 w-full [clip-path:polygon(0_0,100%_0,100%_48%,0_48%)] -translate-x-1">SYNTAX</span>
+                  <span className="inline-block [clip-path:polygon(0_52%,100%_52%,100%_100%,0_100%)] translate-x-1">SYNTAX</span>
+                </div>
                 <br />
-                <span className="text-gradient-primary">2K26</span>
+                <div className="relative inline-block mt-2">
+                  <span className="absolute top-0 left-0 w-full text-gradient-primary [clip-path:polygon(0_0,100%_0,100%_48%,0_48%)] -translate-x-1">2K26</span>
+                  <span className="inline-block text-gradient-primary [clip-path:polygon(0_52%,100%_52%,100%_100%,0_100%)] translate-x-1">2K26</span>
+                </div>
               </motion.h1>
 
               <motion.div initial={{ opacity:0 }} animate={{ opacity:1 }} transition={{ delay:0.48 }} className="flex items-center gap-3 mb-6">
