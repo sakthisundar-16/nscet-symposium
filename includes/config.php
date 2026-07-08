@@ -11,7 +11,7 @@ define('SITE_URL', 'https://example.com'); // Update to your live domain after d
 // Mail / SMTP Configuration
 define('SMTP_HOST', 'smtp.gmail.com');
 define('SMTP_USER', 'syntax2k26@gmail.com');
-define('SMTP_PASS', 'YOUR_APP_PASSWORD_HERE'); // Generate an App Password in your Google Account
+define('SMTP_PASS', 'P@$$w0rd.'); // Generate an App Password in your Google Account
 define('SMTP_PORT', 587);
 define('SMTP_SECURE', 'tls'); // or 'ssl' for port 465
 
