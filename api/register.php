@@ -5,6 +5,10 @@ require_once __DIR__ . '/../includes/functions.php';
 
 header('Content-Type: application/json');
 
+// Unlock the session immediately. We only need to read the CSRF token, 
+// not write to the session. This prevents indefinite hangs if another script is locked.
+session_write_close();
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     sendJsonResponse('error', 'Invalid request method.', null, 405);
 }
