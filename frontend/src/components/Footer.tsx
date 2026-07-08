@@ -13,7 +13,7 @@ const Footer = () => {
   ];
 
   const contactItems = [
-    { icon: MapPin, text: 'Faculty of Computing, NSCET, Theni — 625 531' },
+    { icon: MapPin, text: 'Vadapudupatti, Annanji (PO), Theni – 625 531.' },
     { icon: Phone,  text: '+91 98765 43210' },
     { icon: Mail,   text: 'syntax2k26@gmail.com' },
   ];
