@@ -91,12 +91,12 @@ const Home = () => {
           <img 
             src={`${import.meta.env.BASE_URL}college-building.jpg`} 
             alt="NSCET College Building" 
-            className="w-full h-full object-cover opacity-[0.15] mix-blend-multiply" 
+            className="w-full h-full object-cover opacity-[0.35]" 
           />
         </div>
 
         {/* Background — warm light with subtle navy/gold tones */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#EEF2F8]/85 via-[#F5F7FA]/75 to-[#F0EBE5]/85 pointer-events-none z-0" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#EEF2F8]/80 via-[#F5F7FA]/70 to-[#F0EBE5]/80 pointer-events-none z-0" />
 
         {/* Animated floating orbs — navy + gold */}
         <div className="absolute top-[-100px] left-[-80px] w-[520px] h-[520px] rounded-full bg-[#1B3A6B]/12 blur-[130px] pointer-events-none animate-orb-1" />
