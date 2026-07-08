@@ -79,6 +79,7 @@ if ($_FILES['payment_screenshot']['error'] !== UPLOAD_ERR_OK) {
     sendJsonResponse('error', 'File upload error code: ' . $_FILES['payment_screenshot']['error'], null, 400);
 }
 
+$file = $_FILES['payment_screenshot'];
 $allowed_types = [
     'image/jpeg', 'image/jpg', 'image/pjpeg', 
     'image/png', 'image/x-png',
