@@ -20,6 +20,10 @@ if (empty($_SESSION['user_id']) || !in_array($_SESSION['role'], ['superadmin', '
     exit;
 }
 
+// Unlock session to prevent other tabs (like frontend registration) from hanging 
+// while the server connects to Google SMTP in the background
+session_write_close();
+
 $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
 $status = sanitize_text($_POST['status'] ?? '');
 
