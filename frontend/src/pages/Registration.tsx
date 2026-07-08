@@ -323,7 +323,7 @@ const Registration = () => {
                             <>
                               <Upload size={30} className="text-[#C8845A]/50 mx-auto mb-2 group-hover:text-[#A0623E] transition-colors"/>
                               <p className="text-[#4A6080] text-sm font-inter font-semibold">Click or drag to upload</p>
-                              <p className="text-[#4A6080]/60 text-xs mt-1">PNG, JPG or PDF · Max 5MB</p>
+                              <p className="text-[#4A6080]/60 text-xs mt-1">Any Image format or PDF · Max 10MB</p>
                             </>
                           )}
                         </div>

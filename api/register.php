@@ -75,10 +75,15 @@ if ($_FILES['payment_screenshot']['error'] !== UPLOAD_ERR_OK) {
     sendJsonResponse('error', 'File upload error code: ' . $_FILES['payment_screenshot']['error'], null, 400);
 }
 
-$file = $_FILES['payment_screenshot'];
-$allowed_types = ['image/jpeg', 'image/jpg', 'image/pjpeg', 'image/png', 'application/pdf'];
+$allowed_types = [
+    'image/jpeg', 'image/jpg', 'image/pjpeg', 
+    'image/png', 'image/x-png',
+    'image/webp',
+    'image/heic', 'image/heif',
+    'application/pdf'
+];
 if (!in_array($file['type'], $allowed_types)) {
-    sendJsonResponse('error', 'Only JPG, PNG, and PDF files are allowed.', null, 400);
+    sendJsonResponse('error', 'Only Images (JPG, PNG, WEBP, HEIC) and PDF files are allowed. You uploaded: ' . $file['type'], null, 400);
 }
 if ($file['size'] > 10 * 1024 * 1024) { // 10MB limit
     sendJsonResponse('error', 'File size must be less than 10MB.', null, 400);
