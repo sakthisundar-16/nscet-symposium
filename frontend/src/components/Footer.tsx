@@ -89,7 +89,7 @@ const Footer = () => {
           <div className="h-px bg-gradient-to-r from-transparent via-[#C8845A]/40 to-transparent mb-6" />
 
           <div className="flex flex-col md:flex-row justify-center items-center gap-3 text-xs text-[#4A6080] font-inter">
-            <p>&copy; {year} SYNTAX 2K26 · NSCET Faculty of Computing. All rights reserved.</p>
+            <p>&copy; {year} SYNTAX 2K26 · NSCET Faculty of Computing. All rights reserved. | Developed by Ispin Team</p>
           </div>
         </div>
       </div>
