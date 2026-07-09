@@ -123,7 +123,7 @@ const Home = () => {
               <motion.h1
                 initial={{ opacity:0,y:28 }} animate={{ opacity:1,y:0 }}
                 transition={{ delay:0.32, duration:0.8, ease:[0.16,1,0.3,1] }}
-                className="text-7xl lg:text-8xl xl:text-9xl font-bubbly tracking-wide mb-5 leading-[0.95]"
+                className="text-5xl sm:text-7xl lg:text-8xl xl:text-9xl font-bubbly tracking-wide mb-5 leading-[0.95]"
                 style={{ color: '#000000' }}
               >
                 SYNTAX
@@ -177,7 +177,7 @@ const Home = () => {
                     <div key={unit} className="group">
                       <div className="relative rounded-2xl bg-white/85 border border-[#C8845A]/20 p-4 text-center overflow-hidden transition-all duration-300 group-hover:border-[#C8845A]/50 group-hover:shadow-lg group-hover:shadow-[#C8845A]/15">
                         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-shimmer rounded-2xl" />
-                        <p className="text-4xl font-black font-orbitron mb-1 relative z-10 text-gradient-primary tabular-nums">{value}</p>
+                        <p className="text-3xl md:text-4xl font-black font-orbitron mb-1 relative z-10 text-gradient-primary tabular-nums">{value}</p>
                         <span className="text-[10px] uppercase tracking-[0.28em] text-[#1F2937] font-inter relative z-10 font-semibold">{unit}</span>
                       </div>
                     </div>
