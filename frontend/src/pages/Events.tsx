@@ -512,8 +512,6 @@ const Events = () => {
                   </div>
 
                   {/* Footer */}
-                  <div className="border-t border-[#C8845A]/15 px-7 py-4 bg-gradient-to-r from-[#F5EDE5]/40 to-[#EEF2F8]/30 flex justify-between items-center group-hover:from-[#F5EDE5]/70 group-hover:to-[#EEF2F8]/50 transition-colors duration-300">
-                    <div className="flex items-center gap-2.5">
                       <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#1B3A6B] to-[#C8845A] flex items-center justify-center text-white font-bold text-xs shadow-sm">
                         {event.coordinator.replace('Ms. ','').replace('Mr. ','').charAt(0)}
                       </div>
