@@ -180,21 +180,21 @@ const eventDetails: Record<number, {
 ───────────────────────────────────────────────────────────────────────── */
 const mockEvents = {
   'PHASE 1': [
-    { id:1, name:'Code Debugging',    description:'Find and fix syntax, logical and runtime errors in provided code snippets within the time limit.',  duration:'60 Mins', venue:'Lab 1', icon:'Code',    coordinator:'Ms. Abirami Gayathiri', tag:'Technical' },
-    { id:2, name:'AI Prompt Battle',  description:'Generate the exact target image using AI prompt engineering skills.',          duration:'45 Mins', venue:'Lab 2', icon:'Bot',     coordinator:'Mr. Vinoth Kumar',      tag:'AI' },
-    { id:3, name:'Web Design Battle', description:'Design a responsive landing page based on the on-spot theme.',                 duration:'90 Mins', venue:'Lab 3', icon:'Layout', coordinator:'Ms. Bhavani',          tag:'Design' },
+    { id:1, name:'Code Debugging',    description:'Find and fix syntax, logical and runtime errors in provided code snippets within the time limit.',  duration:'60 Mins', venue:'Lab – I(MAD Lab)', icon:'Code',    coordinator:'Ms. Abirami Gayathiri', tag:'Technical' },
+    { id:2, name:'AI Prompt Battle',  description:'Generate the exact target image using AI prompt engineering skills.',          duration:'45 Mins', venue:'Lab – II(MAD Lab)', icon:'Bot',     coordinator:'Mr. Vinoth Kumar',      tag:'AI' },
+    { id:3, name:'Web Design Battle', description:'Design a responsive landing page based on the on-spot theme.',                 duration:'90 Mins', venue:'Lab – I(MAD Lab)', icon:'Layout', coordinator:'Ms. Bhavani',          tag:'Design' },
   ],
   'PHASE 2': [
     { id:4, name:'Paper Presentation',       description:'Present your research paper on emerging technologies.',          duration:'10 Mins', venue:'Seminar Hall', icon:'FileText',    coordinator:'Mr. Prathap',           tag:'Research' },
-    { id:5, name:'Logic Building Challenge', description:'Solve algorithmic puzzles and complex logic problems.',          duration:'60 Mins', venue:'Lab 1',       icon:'BrainCircuit', coordinator:'Ms. Abirami Gayathiri', tag:'Technical' },
-    { id:6, name:'SQL Query Challenge',      description:'Write complex SQL queries to solve real-world database tasks.',  duration:'60 Mins', venue:'Lab 2',       icon:'Database',     coordinator:'Ms. Bhavani',          tag:'Technical' },
+    { id:5, name:'Logic Building Challenge', description:'Solve algorithmic puzzles and complex logic problems.',          duration:'60 Mins', venue:'Lab – III(ML Lab)', icon:'BrainCircuit', coordinator:'Ms. Abirami Gayathiri', tag:'Technical' },
+    { id:6, name:'SQL Query Challenge',      description:'Write complex SQL queries to solve real-world database tasks.',  duration:'60 Mins', venue:'Lab – III(ML Lab)', icon:'Database',     coordinator:'Ms. Bhavani',          tag:'Technical' },
   ],
   'PHASE 3': [
-    { id:7,  name:'Connection',           description:'Connect images to identify the hidden technical term or concept.',                     duration:'45 Mins',  venue:'Auditorium',   icon:'LinkIcon', coordinator:'Mr. Vinoth Kumar',      tag:'Fun' },
-    { id:8,  name:'Logo Guessing',        description:'Identify tech company logos from partially revealed or modified images.',              duration:'30 Mins',  venue:'Seminar Hall', icon:'Image',    coordinator:'Mr. Prathap',           tag:'Fun' },
-    { id:9,  name:'Short Film',           description:"Showcase a pre-submitted short film on technology's impact on society.",              duration:'5 Mins',   venue:'Auditorium',   icon:'Video',    coordinator:'Ms. Abirami Gayathiri', tag:'Creative' },
-    { id:10, name:'Free Fire Tournament', description:'Solo duo e-Sports gaming tournament — best strategy and survival wins.',               duration:'120 Mins', venue:'Lab 3',        icon:'Gamepad2', coordinator:'Mr. Vinoth Kumar',      tag:'E-Sports' },
-    { id:11, name:'Meme Challenge',       description:'Create the funniest tech-related memes on the spot within the time limit.',           duration:'30 Mins',  venue:'Lab 2',        icon:'Smile',    coordinator:'Ms. Bhavani',          tag:'Creative' },
+    { id:7,  name:'Connection',           description:'Connect images to identify the hidden technical term or concept.',                     duration:'45 Mins',  venue:'CR-',   icon:'LinkIcon', coordinator:'Mr. Vinoth Kumar',      tag:'Fun' },
+    { id:8,  name:'Logo Guessing',        description:'Identify tech company logos from partially revealed or modified images.',              duration:'30 Mins',  venue:'CR-', icon:'Image',    coordinator:'Mr. Prathap',           tag:'Fun' },
+    { id:9,  name:'Short Film',           description:"Showcase a pre-submitted short film on technology's impact on society.",              duration:'5 Mins',   venue:'Seminar Hall',   icon:'Video',    coordinator:'Ms. Abirami Gayathiri', tag:'Creative' },
+    { id:10, name:'Free Fire Tournament', description:'Solo duo e-Sports gaming tournament — best strategy and survival wins.',               duration:'120 Mins', venue:'Lab – I(MAD Lab)', icon:'Gamepad2', coordinator:'Mr. Vinoth Kumar',      tag:'E-Sports' },
+    { id:11, name:'Meme Challenge',       description:'Create the funniest tech-related memes on the spot within the time limit.',           duration:'30 Mins',  venue:'CR-',        icon:'Smile',    coordinator:'Ms. Bhavani',          tag:'Creative' },
   ],
 };
 
