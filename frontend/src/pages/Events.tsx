@@ -198,7 +198,7 @@ const mockEvents = {
   ],
 };
 
-const iconMap: Record<string, React.ComponentType<{size?:number}>> = {
+const iconMap: Record<string, React.ComponentType<{size?:number; className?:string}>> = {
   Code, Bot, Layout, FileText, BrainCircuit, Database, LinkIcon, Image, Video, Gamepad2, Smile,
 };
 
