@@ -512,13 +512,9 @@ const Events = () => {
                   </div>
 
                   {/* Footer */}
-                      <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#1B3A6B] to-[#C8845A] flex items-center justify-center text-white font-bold text-xs shadow-sm">
-                        {event.coordinator.replace('Ms. ','').replace('Mr. ','').charAt(0)}
-                      </div>
-                      <span className="text-xs font-semibold text-[#1F2937] font-inter">{event.coordinator}</span>
-                    </div>
-                    <span className="flex items-center gap-1 text-[#A0623E] text-sm font-bold font-inter group-hover:text-[#1B3A6B] transition-all duration-200">
-                      View Details <ChevronRight size={14} className="group-hover:translate-x-0.5 transition-transform"/>
+                  <div className="border-t border-[#C8845A]/15 px-7 py-4 bg-gradient-to-r from-[#F5EDE5]/40 to-[#EEF2F8]/30 flex justify-end items-center group-hover:from-[#F5EDE5]/70 group-hover:to-[#EEF2F8]/50 transition-colors duration-300">
+                    <span className="text-xs font-bold text-[#A0623E] flex items-center group-hover:tracking-wider transition-all duration-300 font-inter">
+                      View Details <ChevronRight size={14} className="ml-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300"/>
                     </span>
                   </div>
                 </motion.div>
