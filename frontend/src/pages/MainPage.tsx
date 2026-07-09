@@ -7,7 +7,7 @@ import Registration from './Registration';
 
 const pageVariants = {
   hidden: { opacity: 0, y: 80, scale: 0.98 },
-  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.8, ease: "easeOut" } }
+  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.8 } }
 };
 
 const MainPage = () => {

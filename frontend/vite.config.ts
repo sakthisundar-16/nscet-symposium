@@ -17,15 +17,7 @@ export default defineConfig({
     outDir: '../',          // Output to cseworkshop/ root alongside PHP files
     emptyOutDir: false,     // CRITICAL: never wipe PHP files in the root
     assetsDir: 'reactapp',  // Avoid conflict with existing /assets/ PHP folder
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          motion: ['framer-motion'],
-          forms:  ['react-hook-form', '@hookform/resolvers', 'zod'],
-        },
-      },
-    },
+
   },
 
   // ── Dev Server (XAMPP proxy) ────────────────────────────────────────────
