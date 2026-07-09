@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -7,6 +7,29 @@ const Navbar = () => {
   const [isOpen, setIsOpen]     = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    e.preventDefault();
+    if (path.startsWith('/#')) {
+      if (location.pathname !== '/') {
+        navigate(path);
+        setTimeout(() => {
+          const id = path.replace('/#', '');
+          document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      } else {
+        const id = path.replace('/#', '');
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else if (path.startsWith('#')) {
+      const id = path.replace('#', '');
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate(path);
+    }
+    setIsOpen(false);
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -62,7 +85,7 @@ const Navbar = () => {
           scrolled ? 'bg-transparent' : 'bg-white/60 backdrop-blur-md border border-[#C8845A]/18 shadow-sm'
         }`}>
           {navLinks.map(link => (
-            <a key={link.name} href={link.path}
+            <a key={link.name} href={link.path} onClick={(e) => handleNavClick(e, link.path)}
               className={`relative px-4 py-2 text-sm font-semibold rounded-full transition-all duration-200 font-inter ${
                 isActive(link.path) ? 'text-[#A0623E]' : 'text-[#2D4A6A] hover:text-[#A0623E]'
               }`}
@@ -82,7 +105,7 @@ const Navbar = () => {
         {/* Register CTA */}
         <div className="hidden lg:block relative">
           <span className="absolute -inset-1 rounded-full bg-[#C8845A]/18 animate-pulse-glow pointer-events-none" />
-          <a href="#register" className="relative btn-primary inline-flex items-center gap-2 px-6 py-2.5 text-sm">
+          <a href="#register" onClick={(e) => handleNavClick(e, '#register')} className="relative btn-primary inline-flex items-center gap-2 px-6 py-2.5 text-sm">
             <span className="shrink-0 font-orbitron font-bold">Register Now</span>
           </a>
         </div>
@@ -111,7 +134,7 @@ const Navbar = () => {
             <div className="flex flex-col px-6 py-5 space-y-1">
               {navLinks.map((link, i) => (
                 <motion.div key={link.name} initial={{ opacity:0,x:-18 }} animate={{ opacity:1,x:0 }} transition={{ delay:i*0.06 }}>
-                  <a href={link.path} className={`flex items-center px-4 py-3 rounded-xl text-base font-semibold transition-all duration-200 font-inter ${
+                  <a href={link.path} onClick={(e) => handleNavClick(e, link.path)} className={`flex items-center px-4 py-3 rounded-xl text-base font-semibold transition-all duration-200 font-inter ${
                     isActive(link.path)
                       ? 'bg-[#F5EDE5] text-[#A0623E] border border-[#C8845A]/30'
                       : 'text-[#2D4A6A] hover:text-[#A0623E] hover:bg-[#F5EDE5]/60'
@@ -122,7 +145,7 @@ const Navbar = () => {
                 </motion.div>
               ))}
               <motion.div initial={{ opacity:0,x:-18 }} animate={{ opacity:1,x:0 }} transition={{ delay:navLinks.length*0.06 }} className="pt-2">
-                <a href="#register" className="btn-primary flex items-center justify-center gap-2 w-full py-3.5 text-sm" onClick={() => setIsOpen(false)}>
+                <a href="#register" className="btn-primary flex items-center justify-center gap-2 w-full py-3.5 text-sm" onClick={(e) => handleNavClick(e, '#register')}>
                   Register Now
                 </a>
               </motion.div>

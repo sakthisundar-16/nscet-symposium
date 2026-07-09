@@ -1,7 +1,31 @@
 import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Footer = () => {
   const year = new Date().getFullYear();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    e.preventDefault();
+    if (path.startsWith('/#')) {
+      if (location.pathname !== '/') {
+        navigate(path);
+        setTimeout(() => {
+          const id = path.replace('/#', '');
+          document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      } else {
+        const id = path.replace('/#', '');
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else if (path.startsWith('#')) {
+      const id = path.replace('#', '');
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate(path);
+    }
+  };
 
   const navLinks = [
     { label: 'Home',     path: '/#home' },
@@ -47,7 +71,7 @@ const Footer = () => {
                 <span className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.7)] animate-pulse" />
                 <span className="text-xs text-[#2D4A6A] font-inter font-semibold">Registration Open · August 7, 2026</span>
               </div>
-              <a href="/#register" className="inline-flex items-center gap-2 text-sm font-bold text-[#A0623E] bg-white/80 border border-[#C8845A]/30 px-5 py-2.5 rounded-full hover:bg-[#A0623E] hover:text-white hover:border-transparent hover:shadow-lg hover:shadow-[#C8845A]/30 transition-all duration-300 font-inter">
+              <a href="/#register" onClick={(e) => handleNavClick(e, '/#register')} className="inline-flex items-center gap-2 text-sm font-bold text-[#A0623E] bg-white/80 border border-[#C8845A]/30 px-5 py-2.5 rounded-full hover:bg-[#A0623E] hover:text-white hover:border-transparent hover:shadow-lg hover:shadow-[#C8845A]/30 transition-all duration-300 font-inter">
                 Register Now <ArrowRight size={14} />
               </a>
             </div>
@@ -58,7 +82,7 @@ const Footer = () => {
               <ul className="space-y-3">
                 {navLinks.map(({ label, path }) => (
                   <li key={label}>
-                    <a href={path} className="text-sm text-[#2D4A6A] hover:text-[#A0623E] transition-colors duration-200 flex items-center gap-2 group font-inter">
+                    <a href={path} onClick={(e) => handleNavClick(e, path)} className="text-sm text-[#2D4A6A] hover:text-[#A0623E] transition-colors duration-200 flex items-center gap-2 group font-inter">
                       <span className="w-0 h-px bg-gradient-to-r from-[#A0623E] to-[#C8845A] transition-all duration-300 group-hover:w-4 rounded-full" />
                       {label}
                     </a>
