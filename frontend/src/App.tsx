@@ -2,10 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import About from './pages/About';
-import Events from './pages/Events';
-import Schedule from './pages/Schedule';
-import Registration from './pages/Registration';
+import MainPage from './pages/MainPage';
 import AdminDashboard from './pages/admin/Dashboard';
 import CoordinatorDashboard from './pages/coordinator/Dashboard';
 
@@ -15,16 +12,13 @@ function App() {
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow pt-20"> {/* pt-20 for sticky navbar offset */}
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/events" element={<Events />} />
-            <Route path="/schedule" element={<Schedule />} />
-            <Route path="/register" element={<Registration />} />
-            <Route path="/admin" element={<AdminDashboard />} />
-            <Route path="/coordinator" element={<CoordinatorDashboard />} />
-            {/* Add more routes as needed */}
-          </Routes>
+            <Routes>
+              <Route path="/" element={<MainPage />} />
+              <Route path="/admin" element={<AdminDashboard />} />
+              <Route path="/coordinator" element={<CoordinatorDashboard />} />
+              {/* Fallback to root for any other old paths */}
+              <Route path="*" element={<MainPage />} />
+            </Routes>
         </main>
         <Footer />
       </div>

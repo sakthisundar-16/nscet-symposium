@@ -443,3 +443,5 @@
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgba(200, 132, 90, 0.4);
 }
+
+html { scroll-behavior: smooth; }

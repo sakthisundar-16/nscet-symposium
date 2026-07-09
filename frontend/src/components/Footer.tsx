@@ -5,11 +5,11 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   const navLinks = [
-    { label: 'Home',     path: '/' },
-    { label: 'About',    path: '/about' },
-    { label: 'Events',   path: '/events' },
-    { label: 'Schedule', path: '/schedule' },
-    { label: 'Register', path: '/register' },
+    { label: 'Home',     path: '/#home' },
+    { label: 'About',    path: '/#about' },
+    { label: 'Events',   path: '/#events' },
+    { label: 'Schedule', path: '/#schedule' },
+    { label: 'Register', path: '/#register' },
   ];
 
   const contactItems = [
@@ -48,9 +48,9 @@ const Footer = () => {
                 <span className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.7)] animate-pulse" />
                 <span className="text-xs text-[#2D4A6A] font-inter font-semibold">Registration Open · August 7, 2026</span>
               </div>
-              <Link to="/register" className="inline-flex items-center gap-2 text-sm font-bold text-[#A0623E] bg-white/80 border border-[#C8845A]/30 px-5 py-2.5 rounded-full hover:bg-[#A0623E] hover:text-white hover:border-transparent hover:shadow-lg hover:shadow-[#C8845A]/30 transition-all duration-300 font-inter">
+              <a href="/#register" className="inline-flex items-center gap-2 text-sm font-bold text-[#A0623E] bg-white/80 border border-[#C8845A]/30 px-5 py-2.5 rounded-full hover:bg-[#A0623E] hover:text-white hover:border-transparent hover:shadow-lg hover:shadow-[#C8845A]/30 transition-all duration-300 font-inter">
                 Register Now <ArrowRight size={14} />
-              </Link>
+              </a>
             </div>
 
             {/* Explore */}
@@ -59,10 +59,10 @@ const Footer = () => {
               <ul className="space-y-3">
                 {navLinks.map(({ label, path }) => (
                   <li key={label}>
-                    <Link to={path} className="text-sm text-[#2D4A6A] hover:text-[#A0623E] transition-colors duration-200 flex items-center gap-2 group font-inter">
+                    <a href={path} className="text-sm text-[#2D4A6A] hover:text-[#A0623E] transition-colors duration-200 flex items-center gap-2 group font-inter">
                       <span className="w-0 h-px bg-gradient-to-r from-[#A0623E] to-[#C8845A] transition-all duration-300 group-hover:w-4 rounded-full" />
                       {label}
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>
