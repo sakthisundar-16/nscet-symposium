@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Home from './pages/Home';
 import MainPage from './pages/MainPage';
 import AdminDashboard from './pages/admin/Dashboard';
 import CoordinatorDashboard from './pages/coordinator/Dashboard';
