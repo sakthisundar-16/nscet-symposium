@@ -441,9 +441,29 @@ const Events = () => {
             className="text-lg text-[#1F2937] font-inter">
             Click any event card to view full rules, judging criteria &amp; details.
           </motion.p>
-          <motion.div initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} transition={{delay:0.24}}
-            className="mt-4 inline-flex items-center gap-2 bg-[#F5EDE5] border border-[#C8845A]/30 text-[#A0623E] text-xs font-bold px-4 py-2 rounded-full font-inter uppercase tracking-widest">
-            <User size={12}/> Individual Participation Only
+          <motion.div initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} transition={{delay:0.24}} className="mt-8 max-w-2xl mx-auto overflow-hidden rounded-2xl border border-[#C8845A]/20 bg-white/70 shadow-sm backdrop-blur-sm">
+            <table className="w-full text-left border-collapse text-sm font-inter">
+              <thead>
+                <tr className="bg-gradient-to-r from-[#1B3A6B] to-[#2D5BA3] text-white">
+                  <th className="p-4 font-bold tracking-wider">Participation Type</th>
+                  <th className="p-4 font-bold tracking-wider">Events</th>
+                </tr>
+              </thead>
+              <tbody className="text-[#1F2937] divide-y divide-[#C8845A]/15">
+                <tr className="hover:bg-[#F5EDE5]/30 transition-colors">
+                  <td className="p-4 font-semibold whitespace-nowrap"><User size={14} className="inline mr-1 text-[#A0623E]" /> Individual</td>
+                  <td className="p-4 leading-relaxed">
+                    Code Debugging, AI Prompt Battle, Web Design Battle, Paper Presentation, Logic Building, SQL Query Challenge, Meme Challenge
+                  </td>
+                </tr>
+                <tr className="hover:bg-[#F5EDE5]/30 transition-colors">
+                  <td className="p-4 font-semibold whitespace-nowrap"><Users size={14} className="inline mr-1 text-[#1B3A6B]" /> Team (2 Members)</td>
+                  <td className="p-4 leading-relaxed">
+                    Connection, Logo Guessing, Short Film, Free Fire Tournament
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </motion.div>
         </div>
 
