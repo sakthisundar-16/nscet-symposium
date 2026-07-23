@@ -4,6 +4,8 @@ import About from './About';
 import Events from './Events';
 import Schedule from './Schedule';
 import Registration from './Registration';
+import AnnouncementPopup from '../components/AnnouncementPopup';
+
 
 const pageVariants = {
   hidden: { opacity: 0, y: 80, scale: 0.98 },
@@ -28,6 +30,7 @@ const MainPage = () => {
       <motion.div id="register" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={pageVariants}>
         <Registration />
       </motion.div>
+      <AnnouncementPopup />
     </div>
   );
 };

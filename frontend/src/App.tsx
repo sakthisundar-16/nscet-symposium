@@ -5,6 +5,7 @@ import MainPage from './pages/MainPage';
 import AdminDashboard from './pages/admin/Dashboard';
 import CoordinatorDashboard from './pages/coordinator/Dashboard';
 
+
 function App() {
   return (
     <BrowserRouter>

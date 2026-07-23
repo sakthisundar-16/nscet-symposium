@@ -4,7 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  CheckCircle, Upload, QrCode, ArrowLeft, ArrowRight,
+  CheckCircle, Upload, ArrowLeft, ArrowRight,
   User, Calendar, CreditCard, Mail, Phone, MapPin,
   Building2, GraduationCap, MessageCircle,
 } from 'lucide-react';

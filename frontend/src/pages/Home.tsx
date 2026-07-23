@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Calendar, MapPin, Users, Trophy, ArrowRight, Code2, Palette, ChevronDown } from 'lucide-react';
+import { Calendar, MapPin, Users, Trophy, ArrowRight, Code2, Palette, ChevronDown, Building2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const useCounter = (target: number, duration = 1800) => {
@@ -21,26 +21,51 @@ const useCounter = (target: number, duration = 1800) => {
   return { count, ref };
 };
 
-const StatCard = ({ label, value, suffix, icon: Icon, delay }: {
-  label: string; value: number; suffix: string;
-  icon: React.ComponentType<{ size?: number }>; delay: number;
+const StatCard = ({
+  label,
+  value,
+  text,
+  suffix = "",
+  icon: Icon,
+  delay,
+}: {
+  label: string;
+  value?: number;
+  text?: string;
+  suffix?: string;
+  icon: React.ComponentType<{ size?: number }>;
+  delay: number;
 }) => {
-  const { count, ref } = useCounter(value);
+  const { count, ref } = useCounter(value ?? 0);
+
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }} transition={{ delay, duration: 0.5 }}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay, duration: 0.5 }}
       whileHover={{ y: -8 }}
       className="glass-card p-6 md:p-8 text-center group cursor-default"
     >
       <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#EEF2F8] to-[#E8DDD4] border border-[#C8845A]/25 flex items-center justify-center mx-auto mb-4 text-[#A0623E] group-hover:from-[#1B3A6B] group-hover:to-[#2D5BA3] group-hover:text-white group-hover:border-transparent group-hover:shadow-lg group-hover:shadow-[#1B3A6B]/25 transition-all duration-400">
         <Icon size={22} />
       </div>
-      <p className="text-4xl md:text-5xl font-black font-orbitron mb-1 text-gradient-primary tabular-nums">
-        {count}{suffix}
+
+      {text ? (
+        <p className="text-lg md:text-xl font-bold text-gradient-primary font-orbitron leading-snug">
+          {text}
+        </p>
+      ) : (
+        <p className="text-4xl md:text-5xl font-black font-orbitron mb-1 text-gradient-primary tabular-nums">
+          {count}
+          {suffix}
+        </p>
+      )}
+
+      <p className="text-xs uppercase tracking-[0.22em] text-[#1F2937] font-inter font-semibold mt-2">
+        {label}
       </p>
-      <p className="text-xs uppercase tracking-[0.22em] text-[#1F2937] font-inter font-semibold">{label}</p>
     </motion.div>
   );
 };
@@ -154,7 +179,7 @@ const Home = () => {
                 {[
                   { icon: Calendar, text: 'August 7, 2026' },
                   { icon: MapPin,   text: 'NSCET, Theni' },
-                  { icon: Users,    text: 'Individual Only' },
+                  { icon: Users,    text: 'Open for Individuals and Teams' },
                 ].map(({ icon: Icon, text }) => (
                   <span key={text} className="flex items-center gap-2 text-sm font-semibold text-[#1B3A6B] bg-white/80 border border-[#C8845A]/25 px-4 py-2 rounded-full shadow-sm backdrop-blur-sm font-inter">
                     <Icon size={13} className="text-[#A0623E] shrink-0" />
@@ -226,12 +251,38 @@ const Home = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-background via-[#F0EBE5]/40 to-background pointer-events-none" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6">
-            <StatCard label="Attendees"  value={500} suffix="+" icon={Users}    delay={0} />
-            <StatCard label="Colleges"   value={50}  suffix="+" icon={MapPin}   delay={0.1} />
-            <StatCard label="Events"     value={11}  suffix=""  icon={Calendar} delay={0.2} />
-            <StatCard label="Awards"     value={30}  suffix="+" icon={Trophy}   delay={0.3} />
+            <StatCard
+  label="ENGINEERS | ARTS | POLYTECHNIC"
+  text="Open for All Colleges & All Streams"
+  icon={Building2}
+  delay={0}
+/>
+
+<StatCard
+  label="50+ Participating Colleges"
+  text="Individual & Team Participation"
+  icon={Users}
+  delay={0.1}
+/>
+
+<StatCard
+  label="Events"
+  value={11}
+  suffix=""
+  icon={Calendar}
+  delay={0.2}
+/>
+
+<StatCard
+  label="Awards"
+  value={30}
+  suffix="+"
+  icon={Trophy}
+  delay={0.3}
+/>
           </div>
         </div>
+
       </section>
 
       {/* ══ WHY ATTEND ════════════════════════════════════════════════════ */}
